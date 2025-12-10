@@ -61,7 +61,7 @@
         .pet-card {
             background: white;
             border-radius: 30px;
-            padding: 30px;
+            /* padding: 30px; */
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             height: 100%;
@@ -163,22 +163,47 @@
         .stats-box {
             background: white;
             border-radius: 20px;
-            padding: 30px;
-            text-align: center;
+            /* 文字がはみ出る時があるので横paddinigを撤廃 */
+            padding: 30px 0 ;
+            text-align: center ;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
         
         .stats-number {
             font-size: 2.5rem;
             font-weight: bold;
+            margin: auto ;
             color: var(--primary-color);
+            /* md範囲で文字がはみでるため、サイズを下げる */
+            @media screen and (min-width:768px) and (max-width:992px) {
+                font-size: 2rem ;
+            }
         }
+
+        /* ヒーローセクション内のボタンに追加、名前は変更予定 */
+        div a.tmp{
+            margin: auto ;
+        }
+        /* hover:bootstrapに色がないため、ホバー時の動きが無いものに追加する */
+        /* active:クリック時に点滅してしまうのでそこの解消 */
+        button.btn_color_8b5cf6:hover , button.btn_color_8b5cf6:active{
+            background-color: #8b5cf6!important ;
+            /* 優先順位をこちら優先にする方法がわからないので強制的にする */
+            color: white!important ;
+        }
+
+        button.btn_color_14b8a6:hover , button.btn_color_14b8a6:active {
+            background-color: #14b8a6!important ;
+            color: white!important ;
+        }
+
     </style>
 </head>
 <body>
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
+        <!-- 幅の下限をSmallまでにする -->
+        <div class="container" style="min-width: 576px;">
             <a class="navbar-brand" href="#">
                 <i class="bi bi-heart-fill text-danger"></i> PetLife
             </a>
@@ -191,16 +216,16 @@
                         <a class="nav-link active" href="#">ホーム</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ペット図鑑</a>
+                        <a class="nav-link" href="./pet-guide-list.html">ペット図鑑</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">飼い方ガイド</a>
+                        <a class="nav-link" href="./pet-care-guide.html">飼い方ガイド</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Q&A</a>
+                        <a class="nav-link" href="./pet-guide-qa.html">Q&A</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">飼育記録</a>
+                        <a class="nav-link" href="./pet-guide-record.html">飼育記録</a>
                     </li>
                 </ul>
                 <button class="btn btn-outline-success ms-3 rounded-pill fw-bold">
@@ -213,26 +238,34 @@
     <!-- ヒーローセクション -->
     <div class="hero-section">
         <div class="container">
+            <!-- 横px数によって画像と文字の水平順序を変える -->
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h1 class="display-3 fw-bold mb-4" style="color: var(--brown-color);">
+                <div class="col-lg-8 mb-5 mb-lg-0 order-lg-first order-last" style="margin-top: 50px;">
+                    <!-- 文字を中央揃えに変更 -->
+                    <h1 class="display-3 fw-bold mb-4" style="color: var(--brown-color); text-align: center ;">
                         あなたにぴったりの<br>
                         ペットを見つけよう
                     </h1>
-                    <p class="lead mb-4" style="color: #78350f;">
+                    <p class="lead mb-4" style="color: #78350f; text-align: center ;">
                         ペットとの幸せな暮らしをサポートする情報サイト。<br>
                         飼い方、健康管理、しつけまで詳しく解説！
                     </p>
-                    <div class="d-flex gap-3">
-                        <button class="btn btn-primary-custom">
-                            <i class="bi bi-search"></i> ペットを探す
-                        </button>
-                        <button class="btn btn-outline-dark rounded-pill px-4 py-3 fw-bold">
-                            <i class="bi bi-book"></i> 飼い方を学ぶ
-                        </button>
+                    <div class="d-flex">
+                        <!-- ボタンを画面全体を使うように変更 -->
+                         <!-- 画面遷移の設定 -->
+                        <a href="./pet-guide-list.html" class="tmp">
+                            <button class="btn btn-primary-custom">
+                                <i class="bi bi-search"></i> ペットを探す
+                            </button>
+                        </a>
+                        <a href="./pet-care-guide.html" class="tmp">
+                            <button class="btn btn-outline-dark rounded-pill px-4 py-3 fw-bold">
+                                <i class="bi bi-book"></i> 飼い方を学ぶ
+                            </button>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-4 mb-7 text-center order-lg-last order-first ">
                     <img src="https://placehold.co/500x400/10b981/ffffff?text=Happy+Pets" class="hero-image" alt="ペットイラスト">
                 </div>
             </div>
@@ -277,14 +310,16 @@
 
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="pet-card">
-                        <div class="pet-icon">
+                    <!-- petcardにpaddingがついているが、md以下の時星の表記が揺れるため
+                     ひとつ下げてそれぞれにmarginをつけ、星のdivクラスからはつけない -->
+                    <div class="pet-card py-4">
+                        <div class="pet-icon mx-$spacer*2">
                             <i class="bi bi-emoji-smile"></i>
                         </div>
                         <div class="text-center">
                             <span class="category-badge">犬</span>
-                            <h4 class="fw-bold mb-3">柴犬</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="fw-bold mb-3 mx-4">柴犬</h4>
+                            <p class="text-muted mb-4 mx-4">
                                 日本原産の愛らしい犬種。忠実で賢く、家族思いの性格が魅力です。
                             </p>
                             <div class="d-flex justify-content-around mb-3">
@@ -297,22 +332,27 @@
                                     <div class="text-warning">★★★★★</div>
                                 </div>
                             </div>
-                            <button class="btn btn-outline-success rounded-pill w-100">
-                                詳細を見る <i class="bi bi-arrow-right"></i>
-                            </button>
+                            <div class="mx-4">
+                                <!-- 一例の画面遷移 -->
+                                <a href="./pet-guide-detail.html">
+                                    <button class="btn btn-outline-success rounded-pill w-100">
+                                        詳細を見る <i class="bi bi-arrow-right"></i>
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="pet-card">
+                    <div class="pet-card py-4">
                         <div class="pet-icon" style="background: linear-gradient(135deg, #f59e0b, #fb923c);">
                             <i class="bi bi-emoji-heart-eyes"></i>
                         </div>
                         <div class="text-center">
                             <span class="category-badge" style="background: #fb923c;">猫</span>
-                            <h4 class="fw-bold mb-3">アメリカンショートヘア</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="fw-bold mb-3 mx-4">アメリカンショートヘア</h4>
+                            <p class="text-muted mb-4 mx-4">
                                 人懐っこく遊び好きな性格。初心者にもおすすめの猫種です。
                             </p>
                             <div class="d-flex justify-content-around mb-3">
@@ -325,22 +365,24 @@
                                     <div class="text-warning">★★★★★</div>
                                 </div>
                             </div>
-                            <button class="btn btn-outline-warning rounded-pill w-100">
-                                詳細を見る <i class="bi bi-arrow-right"></i>
-                            </button>
+                            <div class="mx-4">
+                                <button class="btn btn-outline-warning rounded-pill w-100">
+                                    詳細を見る <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="pet-card">
+                    <div class="pet-card py-4">
                         <div class="pet-icon" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
                             <i class="bi bi-droplet-fill"></i>
                         </div>
                         <div class="text-center">
                             <span class="category-badge" style="background: #06b6d4;">小動物</span>
-                            <h4 class="fw-bold mb-3">ハムスター</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="fw-bold mb-3 mx-4">ハムスター</h4>
+                            <p class="text-muted mb-4 mx-4">
                                 小さくて可愛らしいペット。省スペースで飼育できるのが魅力。
                             </p>
                             <div class="d-flex justify-content-around mb-3">
@@ -353,22 +395,24 @@
                                     <div class="text-warning">★★★★☆</div>
                                 </div>
                             </div>
-                            <button class="btn btn-outline-info rounded-pill w-100">
-                                詳細を見る <i class="bi bi-arrow-right"></i>
-                            </button>
+                            <div class="mx-4">
+                                <button class="btn btn-outline-info rounded-pill w-100">
+                                    詳細を見る <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="pet-card">
+                    <div class="pet-card py-4">
                         <div class="pet-icon" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
                             <i class="bi bi-feather"></i>
                         </div>
                         <div class="text-center">
                             <span class="category-badge" style="background: #8b5cf6;">鳥類</span>
-                            <h4 class="fw-bold mb-3">セキセイインコ</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="fw-bold mb-3 mx-4">セキセイインコ</h4>
+                            <p class="text-muted mb-4 mx-4">
                                 おしゃべり好きで人懐っこい小鳥。カラフルな羽が美しい。
                             </p>
                             <div class="d-flex justify-content-around mb-3">
@@ -381,22 +425,24 @@
                                     <div class="text-warning">★★★★☆</div>
                                 </div>
                             </div>
-                            <button class="btn rounded-pill w-100" style="border: 2px solid #8b5cf6; color: #8b5cf6;">
-                                詳細を見る <i class="bi bi-arrow-right"></i>
+                            <div class="mx-4">
+                                <button class="btn rounded-pill w-100 btn_color_8b5cf6" style="border: 2px solid #8b5cf6; color: #8b5cf6;">
+                                    詳細を見る <i class="bi bi-arrow-right"></i>
+                                </div>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="pet-card">
+                    <div class="pet-card py-4">
                         <div class="pet-icon" style="background: linear-gradient(135deg, #14b8a6, #10b981);">
                             <i class="bi bi-water"></i>
                         </div>
                         <div class="text-center">
                             <span class="category-badge" style="background: #14b8a6;">爬虫類</span>
-                            <h4 class="fw-bold mb-3">ヒョウモントカゲモドキ</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="fw-bold mb-3 mx-4">ヒョウモントカゲモドキ</h4>
+                            <p class="text-muted mb-4 mx-4">
                                 飼育しやすい爬虫類として人気。穏やかな性格で可愛らしい。
                             </p>
                             <div class="d-flex justify-content-around mb-3">
@@ -409,22 +455,24 @@
                                     <div class="text-warning">★★★☆☆</div>
                                 </div>
                             </div>
-                            <button class="btn rounded-pill w-100" style="border: 2px solid #14b8a6; color: #14b8a6;">
-                                詳細を見る <i class="bi bi-arrow-right"></i>
-                            </button>
+                            <div class="mx-4">
+                                <button class="btn rounded-pill w-100 btn_color_14b8a6" style="border: 2px solid #14b8a6; color: #14b8a6;">
+                                    詳細を見る <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="pet-card">
+                    <div class="pet-card py-4">
                         <div class="pet-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">
                             <i class="bi bi-diagram-3-fill"></i>
                         </div>
                         <div class="text-center">
                             <span class="category-badge" style="background: #3b82f6;">魚類</span>
-                            <h4 class="fw-bold mb-3">金魚</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="fw-bold mb-3 mx-4">金魚</h4>
+                            <p class="text-muted mb-4 mx-4">
                                 日本の伝統的な観賞魚。優雅な泳ぎと美しい姿が魅力的。
                             </p>
                             <div class="d-flex justify-content-around mb-3">
@@ -437,9 +485,11 @@
                                     <div class="text-warning">★★★★☆</div>
                                 </div>
                             </div>
-                            <button class="btn btn-outline-primary rounded-pill w-100">
-                                詳細を見る <i class="bi bi-arrow-right"></i>
-                            </button>
+                            <div class="mx-4">
+                                <button class="btn btn-outline-primary rounded-pill w-100">
+                                    詳細を見る <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
