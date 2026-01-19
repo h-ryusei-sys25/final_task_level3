@@ -212,7 +212,7 @@
 
         .search-box {
             background: white;
-            border-radius: 50px;
+            border-radius: 50px ;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             padding: 8px;
             margin-bottom: 30px;
@@ -234,7 +234,7 @@
             border: none;
             color: white;
             padding: 12px 30px;
-            border-radius: 50px;
+            border-radius: 50px !important ;
             font-weight: bold;
         }
 
@@ -350,10 +350,11 @@
     <div class="container">
         <!-- 検索ボックス -->
         <div class="search-box">
-            <div class="d-flex align-items-center">
-                <input type="text" class="flex-grow-1" placeholder="飼い方を検索...（例：犬のしつけ、猫のトイレ）">
-                <button type="button">
-                    <i class="bi bi-search"></i> 検索
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="飼い方を検索...（例：犬のしつけ、猫のトイレ）" aria-label="検索">
+
+                <button class="btn btn-primary" type="button">
+                    <i class="bi bi-search me-1"></i>検索
                 </button>
             </div>
         </div>
@@ -483,7 +484,8 @@
 
                     <div class="accordion accordion-custom" id="dogGuideAccordion">
                         <div class="accordion-item">
-                            <h2 class="accordion-header">
+                            <h2 class="accordion-header" id="#transition">
+                                <!-- 展開したときにヘッダーがページの頭になるように動かす -->
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#step1">
                                     <i class="bi bi-1-circle-fill me-2" style="color: var(--primary-color);"></i>
@@ -885,7 +887,31 @@
         document.addEventListener('DOMContentLoaded', function () {
             console.log('飼い方ガイドページが読み込まれました');
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordion = document.getElementById('dogGuideAccordion');
+
+            // AI使用_アコーディオンの調整
+            // アコーディオンが開いた(shown)タイミングで発火
+            accordion.addEventListener('shown.bs.collapse', function (event) {
+                // 開かれたコンテンツ要素
+                const openedContent = event.target;
+                // その親要素（accordion-item）を取得
+                const item = openedContent.closest('.accordion-item');
+
+                // スクロール位置の調整
+                // stickyヘッダー（固定ナビ）がある場合は、その高さ分（例: 70px）引く必要があります
+                const offset = 70; // 画面上部からの余白
+                const itemTop = item.getBoundingClientRect().top + window.scrollY;
+
+                window.scrollTo({
+                    top: itemTop - offset,
+                    behavior: 'smooth' // スムーズにスクロール
+                });
+            });
+        });
     </script>
+
 </body>
 
 </html>
