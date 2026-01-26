@@ -13,12 +13,20 @@
             border-radius: 30px;
             padding: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 20px;
 
-            /* サイドバーが上下表示になったとき下マージンをつけて見栄えを整える */
+            /* PC画面（横並び）のときの設定 */
+            @media screen and (min-width: 992px) {
+                position: sticky;
+                top: 60px;
+
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+            }
+
+            /* スマホ・タブレット（縦並び）のときの設定 */
             @media screen and (max-width:991px) {
                 margin-bottom: 1rem;
+                position: static;
             }
         }
 
@@ -45,6 +53,22 @@
         .filter-section:last-child {
             border-bottom: none;
         }
+
+        /* AI使用箇所 */
+        /* サイドバーのスクロールバーをカスタマイズ */
+        .filter-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .filter-sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .filter-sidebar::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
 
         .form-check-input:checked {
             background-color: var(--primary-color);
@@ -289,12 +313,12 @@
                 <!-- カテゴリクイックフィルター -->
                 <div class="category-filter">
                     <button class="category-btn active">すべて</button>
-                    <button class="category-btn">🐕 犬</button>
-                    <button class="category-btn">🐈 猫</button>
-                    <button class="category-btn">🐹 小動物</button>
-                    <button class="category-btn">🦜 鳥類</button>
-                    <button class="category-btn">🦎 爬虫類</button>
-                    <button class="category-btn">🐠 魚類</button>
+                    <button class="category-btn">🐋 巨海</button>
+                    <button class="category-btn">🌑 深淵</button>
+                    <button class="category-btn">⚡ 疾風</button>
+                    <button class="category-btn">🌿 大河の主</button>
+                    <button class="category-btn">☠️ 凶爪・猛毒</button>
+                    <button class="category-btn">✨ 神域・華麗</button>
                 </div>
 
                 <!-- ソートとカウント -->
@@ -303,9 +327,9 @@
                         検索結果: <span class="fw-bold text-success">290件</span>
                     </h5>
                     <div class="d-flex gap-2">
-                        <button class="sort-btn active">人気順</button>
+                        <button class="sort-btn active">登録順</button>
                         <button class="sort-btn">名前順</button>
-                        <button class="sort-btn">飼いやすさ順</button>
+                        <button class="sort-btn">必要規模順</button>
                     </div>
                 </div>
 
@@ -315,8 +339,8 @@
                         <div class="pet-card">
                             <img src="./img/ジンベエザメ_Gemini.png" class="pet-img" alt="ジンベエザメ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #e0f2fe; color: #0369a1;">巨海 -
-                                    GIGANT</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #e0f2fe; color: #0369a1;">巨海</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ジンベエザメ</h5>
                                 <p class="text-muted small mb-3">世界最大の巨体と温厚な性格。星空のような斑紋を独り占めできる至高の癒やしです。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -339,8 +363,8 @@
                         <div class="pet-card">
                             <img src="./img/リュウグウノツカイ_Gemini.png" class="pet-img" alt="リュウグウノツカイ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #f1f5f9; color: #475569;">深淵 -
-                                    ABYSS</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #f1f5f9; color: #475569;">深淵</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">リュウグウノツカイ</h5>
                                 <p class="text-muted small mb-3">深海から届く銀の閃光。神秘的な長い体は、夜の室内を幻想的な神域へと変貌させます。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -363,8 +387,8 @@
                         <div class="pet-card">
                             <img src="./img/クロマグロ_Gemini.png" class="pet-img" alt="クロマグロ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #eff6ff; color: #1d4ed8;">疾風 -
-                                    RUNNER</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #eff6ff; color: #1d4ed8;">疾風</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">クロマグロ</h5>
                                 <p class="text-muted small mb-3">止まらぬ躍動と銀の輝き。時速100kmの群泳が、部屋に生命のエネルギーを循環させます。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -387,8 +411,8 @@
                         <div class="pet-card">
                             <img src="./img/ピラルク_Genimi.png" class="pet-img" alt="ピラルク">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #fef2f2; color: #b91c1c;">大河の主 -
-                                    ANCIENT</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #fef2f2; color: #b91c1c;">大河の主</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ピラルク</h5>
                                 <p class="text-muted small mb-3">1億年不変の姿と緋色の鎧。大河の歴史をリビングに宿す、生きた伝説の守護者です。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -411,8 +435,8 @@
                         <div class="pet-card">
                             <img src="./img/ホホジロザメ_Gemini.png" class="pet-img" alt="ホホジロザメ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #18181b; color: #fafafa;">凶爪 -
-                                    DANGEROUS</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #18181b; color: #fafafa;">凶爪・猛毒</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ホホジロザメ</h5>
                                 <p class="text-muted small mb-3">完璧な捕食者の造形。ガラス一枚を隔てて対峙する最強の緊張感は、支配欲を満たします。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -435,8 +459,8 @@
                         <div class="pet-card">
                             <img src="./img/リーフィーシードラゴン_Gemini.png" class="pet-img" alt="リーフィーシードラゴン">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #f0fdf4; color: #15803d;">神域 -
-                                    CELESTIAL</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #f0fdf4; color: #15803d;">神域・華麗</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">リーフィーシードラゴン</h5>
                                 <p class="text-muted small mb-3">魚類を超越した装飾美。漂う森のような優雅な舞は、見る者を深い安らぎへ誘います。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -459,8 +483,8 @@
                         <div class="pet-card">
                             <img src="./img/マンボウ_Gemini.png" class="pet-img" alt="マンボウ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #e0f2fe; color: #0369a1;">巨海 -
-                                    GIGANT</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #e0f2fe; color: #0369a1;">巨海</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">マンボウ</h5>
                                 <p class="text-muted small mb-3">海を漂う太陽の巨体。独特のフォルムと予測不能な動きが、日常のストレスを無効化します。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -483,8 +507,8 @@
                         <div class="pet-card">
                             <img src="./img/デメニギス_Gemini.png" class="pet-img" alt="デメニギス">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #f1f5f9; color: #475569;">深淵 -
-                                    ABYSS</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #f1f5f9; color: #475569;">深淵</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">デメニギス</h5>
                                 <p class="text-muted small mb-3">透明な頭部を持つ深淵の観測者。異星の生物のような姿は、知的好奇心を刺激し続けます。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
@@ -507,8 +531,8 @@
                         <div class="pet-card">
                             <img src="./img/ニシカジキ_Gemini.png" class="pet-img" alt="ニシカジキ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge" style="background: #eff6ff; color: #1d4ed8;">疾風 -
-                                    RUNNER</span>
+                                <span class="badge difficulty-badge"
+                                    style="background: #eff6ff; color: #1d4ed8;">疾風</span>
                                 <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ニシカジキ</h5>
                                 <p class="text-muted small mb-3">突き刺す疾風、海中の剣士。その鋭利な吻と筋肉美は、力強さの象徴として君臨します。</p>
                                 <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
