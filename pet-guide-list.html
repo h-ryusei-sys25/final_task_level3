@@ -23,6 +23,7 @@
         }
 
         .sidebar-responsive {
+
             /* サイドバーが上下表示になったときセクションを横ならべにする */
             @media screen and (max-width:991px) {
                 display: flex;
@@ -37,7 +38,7 @@
 
             @media screen and (max-width:991px) {
                 min-width: 170px;
-                margin-right: auto ;
+                margin-right: auto;
             }
         }
 
@@ -193,119 +194,86 @@
                                 <!-- 初期状態は絞込なしに変更 -->
                                 <input class="form-check-input" type="checkbox" id="cat1">
                                 <label class="form-check-label" for="cat1">
-                                    犬 <span class="badge bg-secondary">120</span>
+                                    巨海 <span class="badge bg-secondary">12</span>
                                 </label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="cat2">
                                 <label class="form-check-label" for="cat2">
-                                    猫 <span class="badge bg-secondary">80</span>
+                                    深淵 <span class="badge bg-secondary">48</span>
                                 </label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="cat3">
                                 <label class="form-check-label" for="cat3">
-                                    小動物 <span class="badge bg-secondary">45</span>
+                                    疾風 <span class="badge bg-secondary">35</span>
                                 </label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="cat4">
                                 <label class="form-check-label" for="cat4">
-                                    鳥類 <span class="badge bg-secondary">35</span>
+                                    大河の主 <span class="badge bg-secondary">27</span>
                                 </label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="cat5">
                                 <label class="form-check-label" for="cat5">
-                                    爬虫類 <span class="badge bg-secondary">28</span>
+                                    狂爪・猛毒 <span class="badge bg-secondary">56</span>
                                 </label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="cat6">
                                 <label class="form-check-label" for="cat6">
-                                    魚類 <span class="badge bg-secondary">42</span>
+                                    神域・華麗 <span class="badge bg-secondary">112</span>
                                 </label>
                             </div>
                         </div>
 
-                        <!-- 飼いやすさ -->
                         <div class="filter-section">
-                            <h6 class="fw-bold mb-3">飼いやすさ</h6>
+                            <h6 class="fw-bold mb-3">覚悟の重さ</h6>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="difficulty" id="diff1">
-                                <label class="form-check-label" for="diff1">
-                                    すべて
-                                </label>
+                                <input class="form-check-input" type="radio" name="diff" id="diff1">
+                                <label class="form-check-label" for="diff1">★★★★★ 命懸け</label>
                             </div>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="difficulty" id="diff2">
-                                <label class="form-check-label" for="diff2">
-                                    ★★★★★ 初心者向け
-                                </label>
+                                <input class="form-check-input" type="radio" name="diff" id="diff2">
+                                <label class="form-check-label" for="diff2">★★★★☆ 国家級管理</label>
                             </div>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="difficulty" id="diff3">
-                                <label class="form-check-label" for="diff3">
-                                    ★★★★☆ やや簡単
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="difficulty" id="diff4">
-                                <label class="form-check-label" for="diff4">
-                                    ★★★☆☆ 普通
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="difficulty" id="diff5">
-                                <label class="form-check-label" for="diff5">
-                                    ★★☆☆☆ 経験者向け
-                                </label>
+                                <input class="form-check-input" type="radio" name="diff" id="diff3">
+                                <label class="form-check-label" for="diff3">★★★☆☆ 専門チーム要</label>
                             </div>
                         </div>
 
-                        <!-- サイズ -->
                         <div class="filter-section">
-                            <h6 class="fw-bold mb-3">サイズ</h6>
+                            <h6 class="fw-bold mb-3">必要な飼育規模</h6>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="size1">
-                                <label class="form-check-label" for="size1">
-                                    小型（〜5kg）
-                                </label>
+                                <label class="form-check-label" for="size1">海洋・湾岸区画 (15m〜)</label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="size2">
-                                <label class="form-check-label" for="size2">
-                                    中型（5〜20kg）
-                                </label>
+                                <label class="form-check-label" for="size2">建築一体型巨大水槽 (5〜15m)</label>
                             </div>
                             <div class="form-check mb-2">
                                 <input class="form-check-input" type="checkbox" id="size3">
-                                <label class="form-check-label" for="size3">
-                                    大型（20kg〜）
-                                </label>
+                                <label class="form-check-label" for="size3">邸宅内大型プール (〜5m)</label>
                             </div>
                         </div>
 
-                        <!-- 活動レベル -->
                         <div class="filter-section">
-                            <h6 class="fw-bold mb-3">活動レベル</h6>
+                            <h6 class="fw-bold mb-3">特殊環境</h6>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="activity1">
-                                <label class="form-check-label" for="activity1">
-                                    活発
-                                </label>
+                                <input class="form-check-input" type="checkbox" id="env1">
+                                <label class="form-check-label" for="env1">超高圧・無光層</label>
                             </div>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="activity2">
-                                <label class="form-check-label" for="activity2">
-                                    普通
-                                </label>
+                                <input class="form-check-input" type="checkbox" id="env2">
+                                <label class="form-check-label" for="env2">超高速回遊流</label>
                             </div>
                             <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="activity3">
-                                <label class="form-check-label" for="activity3">
-                                    おとなしい
-                                </label>
+                                <input class="form-check-input" type="checkbox" id="env3">
+                                <label class="form-check-label" for="env3">熱帯大河偽装環境</label>
                             </div>
                         </div>
                     </div>
@@ -332,7 +300,7 @@
                 <!-- ソートとカウント -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h5 class="mb-0" style="color: var(--brown-color);">
-                        検索結果: <span class="fw-bold text-success">120件</span>
+                        検索結果: <span class="fw-bold text-success">290件</span>
                     </h5>
                     <div class="d-flex gap-2">
                         <button class="sort-btn active">人気順</button>
@@ -345,235 +313,216 @@
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/10b981/ffffff?text=Shiba+Inu" class="pet-img"
-                                alt="柴犬">
+                            <img src="./img/ジンベエザメ_Gemini.png" class="pet-img" alt="ジンベエザメ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #dcfce7; color: #10b981;">初心者向け</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">柴犬</h5>
-                                <p class="text-muted small mb-3">忠実で賢く、家族思いの日本原産の犬種</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #e0f2fe; color: #0369a1;">巨海 -
+                                    GIGANT</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ジンベエザメ</h5>
+                                <p class="text-muted small mb-3">世界最大の巨体と温厚な性格。星空のような斑紋を独り占めできる至高の癒やしです。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">中型</strong>
+                                        <small class="text-muted d-block">巨大さ</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">省スペース度</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <a href="./pet-guide-detail.html">
-                                    <button class="btn btn-outline-success w-100 rounded-pill">
-                                        詳細を見る <i class="bi bi-arrow-right"></i>
-                                    </button>
-                                </a>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/f59e0b/ffffff?text=Golden+Retriever" class="pet-img"
-                                alt="ゴールデンレトリバー">
+                            <img src="./img/リュウグウノツカイ_Gemini.png" class="pet-img" alt="リュウグウノツカイ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #dcfce7; color: #10b981;">初心者向け</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ゴールデンレトリバー</h5>
-                                <p class="text-muted small mb-3">優しく穏やかで家族に愛情深い大型犬</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #f1f5f9; color: #475569;">深淵 -
+                                    ABYSS</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">リュウグウノツカイ</h5>
+                                <p class="text-muted small mb-3">深海から届く銀の閃光。神秘的な長い体は、夜の室内を幻想的な神域へと変貌させます。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">大型</strong>
+                                        <small class="text-muted d-block">神秘性</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">日常感</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/fb923c/ffffff?text=Chihuahua" class="pet-img"
-                                alt="チワワ">
+                            <img src="./img/クロマグロ_Gemini.png" class="pet-img" alt="クロマグロ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #dcfce7; color: #10b981;">初心者向け</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">チワワ</h5>
-                                <p class="text-muted small mb-3">世界最小の犬種。愛らしく勇敢な性格</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #eff6ff; color: #1d4ed8;">疾風 -
+                                    RUNNER</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">クロマグロ</h5>
+                                <p class="text-muted small mb-3">止まらぬ躍動と銀の輝き。時速100kmの群泳が、部屋に生命のエネルギーを循環させます。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">小型</strong>
+                                        <small class="text-muted d-block">躍動感</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">普通</strong>
+                                        <small class="text-muted d-block">静止度</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/ec4899/ffffff?text=Poodle" class="pet-img"
-                                alt="トイプードル">
+                            <img src="./img/ピラルク_Genimi.png" class="pet-img" alt="ピラルク">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #dcfce7; color: #10b981;">初心者向け</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">トイプードル</h5>
-                                <p class="text-muted small mb-3">賢く社交的。抜け毛が少なく飼いやすい</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #fef2f2; color: #b91c1c;">大河の主 -
+                                    ANCIENT</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ピラルク</h5>
+                                <p class="text-muted small mb-3">1億年不変の姿と緋色の鎧。大河の歴史をリビングに宿す、生きた伝説の守護者です。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">小型</strong>
+                                        <small class="text-muted d-block">原始的</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">愛嬌</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/8b5cf6/ffffff?text=French+Bulldog" class="pet-img"
-                                alt="フレンチブルドッグ">
+                            <img src="./img/ホホジロザメ_Gemini.png" class="pet-img" alt="ホホジロザメ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #fef3c7; color: #f59e0b;">やや簡単</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">フレンチブルドッグ</h5>
-                                <p class="text-muted small mb-3">愛嬌があり人懐っこい。運動量は少なめ</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #18181b; color: #fafafa;">凶爪 -
+                                    DANGEROUS</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ホホジロザメ</h5>
+                                <p class="text-muted small mb-3">完璧な捕食者の造形。ガラス一枚を隔てて対峙する最強の緊張感は、支配欲を満たします。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">中型</strong>
+                                        <small class="text-muted d-block">スリル</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">普通</strong>
+                                        <small class="text-muted d-block">安全性</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/06b6d4/ffffff?text=Pomeranian" class="pet-img"
-                                alt="ポメラニアン">
+                            <img src="./img/リーフィーシードラゴン_Gemini.png" class="pet-img" alt="リーフィーシードラゴン">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #dcfce7; color: #10b981;">初心者向け</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ポメラニアン</h5>
-                                <p class="text-muted small mb-3">ふわふわの被毛が特徴。活発で遊び好き</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #f0fdf4; color: #15803d;">神域 -
+                                    CELESTIAL</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">リーフィーシードラゴン</h5>
+                                <p class="text-muted small mb-3">魚類を超越した装飾美。漂う森のような優雅な舞は、見る者を深い安らぎへ誘います。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">小型</strong>
+                                        <small class="text-muted d-block">芸術性</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">発見しやすさ</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/14b8a6/ffffff?text=Corgi" class="pet-img" alt="コーギー">
+                            <img src="./img/マンボウ_Gemini.png" class="pet-img" alt="マンボウ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #fef3c7; color: #f59e0b;">やや簡単</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ウェルシュコーギー</h5>
-                                <p class="text-muted small mb-3">短い足と長い胴が特徴。明るく友好的</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #e0f2fe; color: #0369a1;">巨海 -
+                                    GIGANT</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">マンボウ</h5>
+                                <p class="text-muted small mb-3">海を漂う太陽の巨体。独特のフォルムと予測不能な動きが、日常のストレスを無効化します。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">中型</strong>
+                                        <small class="text-muted d-block">奇抜さ</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">生存難度</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/3b82f6/ffffff?text=Miniature+Schnauzer"
-                                class="pet-img" alt="ミニチュアシュナウザー">
+                            <img src="./img/デメニギス_Gemini.png" class="pet-img" alt="デメニギス">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #dcfce7; color: #10b981;">初心者向け</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ミニチュアシュナウザー</h5>
-                                <p class="text-muted small mb-3">ひげが特徴的。賢く忠実な性格</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #f1f5f9; color: #475569;">深淵 -
+                                    ABYSS</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">デメニギス</h5>
+                                <p class="text-muted small mb-3">透明な頭部を持つ深淵の観測者。異星の生物のような姿は、知的好奇心を刺激し続けます。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">小型</strong>
+                                        <small class="text-muted d-block">特異性</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">照明耐性</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-4">
                         <div class="pet-card">
-                            <img src="https://placehold.co/300x200/ef4444/ffffff?text=Beagle" class="pet-img"
-                                alt="ビーグル">
+                            <img src="./img/ニシカジキ_Gemini.png" class="pet-img" alt="ニシカジキ">
                             <div class="p-3">
-                                <span class="badge difficulty-badge"
-                                    style="background: #fef3c7; color: #f59e0b;">やや簡単</span>
-                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ビーグル</h5>
-                                <p class="text-muted small mb-3">元気で明るい性格。好奇心旺盛な猟犬</p>
-                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge difficulty-badge" style="background: #eff6ff; color: #1d4ed8;">疾風 -
+                                    RUNNER</span>
+                                <h5 class="fw-bold mt-2 mb-2" style="color: var(--brown-color);">ニシカジキ</h5>
+                                <p class="text-muted small mb-3">突き刺す疾風、海中の剣士。その鋭利な吻と筋肉美は、力強さの象徴として君臨します。</p>
+                                <div class="d-flex justify-content-between align-items-center mb-3 border-top pt-2">
                                     <div>
-                                        <small class="text-muted d-block">サイズ</small>
-                                        <strong style="color: var(--primary-color);">中型</strong>
+                                        <small class="text-muted d-block">突破力</small>
+                                        <strong style="color: #10b981;">★★★★★</strong>
                                     </div>
                                     <div>
-                                        <small class="text-muted d-block">活動量</small>
-                                        <strong style="color: var(--secondary-color);">活発</strong>
+                                        <small class="text-muted d-block">旋回性能</small>
+                                        <strong style="color: #ef4444;">★☆☆☆☆</strong>
                                     </div>
                                 </div>
-                                <button class="btn btn-outline-success w-100 rounded-pill">
-                                    詳細を見る <i class="bi bi-arrow-right"></i>
-                                </button>
+                                <button class="btn btn-outline-success w-100 rounded-pill">詳細を見る <i
+                                        class="bi bi-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
