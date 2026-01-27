@@ -220,6 +220,21 @@
             background-color: var(--primary-color);
             color: white;
         }
+
+        .overflow-x-auto::-webkit-scrollbar {
+            height: 4px;
+            /* バーを細く */
+        }
+
+        .overflow-x-auto::-webkit-scrollbar-thumb {
+            background: #ccc;
+            /* バーの色 */
+            border-radius: 4px;
+        }
+
+        .overflow-x-auto::-webkit-scrollbar-track {
+            background: transparent;
+        }
     </style>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -279,66 +294,76 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="category-tabs">
-                    <ul class="nav nav-pills justify-content-center flex-wrap" id="categoryTabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all" type="button"
-                                role="tab">
-                                <i class="bi bi-grid"></i> すべて
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dog" type="button"
-                                role="tab">
-                                <i class="bi bi-emoji-smile"></i> 犬
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#cat" type="button"
-                                role="tab">
-                                <i class="bi bi-emoji-heart-eyes"></i> 猫
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#health" type="button"
-                                role="tab">
-                                <i class="bi bi-heart-pulse"></i> 健康
-                            </button>
-                        </li>
-                    </ul>
+                <div class="category-tabs overflow-x-auto pb-2 mb-4">
+                    <div class="overflow-x-auto pb-2 mb-4">
+                        <ul class="nav nav-pills flex-nowrap text-nowrap gap-2" id="categoryTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#all"
+                                    type="button" role="tab">
+                                    すべて
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#system" type="button"
+                                    role="tab">
+                                    システム異常
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#bio" type="button"
+                                    role="tab">
+                                    生体管理(Bio)
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#hardware" type="button"
+                                    role="tab">
+                                    設備ハードウェア
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#emergency" type="button"
+                                    role="tab">
+                                    緊急(Emergency)
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#security" type="button"
+                                    role="tab">
+                                    セキュリティ
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="all" role="tabpanel">
                         <div class="accordion" id="faqAccordion">
+                            <div class="d-flex align-items-center mb-4">
+                                <h4 class="fw-bold mb-0">よくあるインシデント (FAQ)</h4>
+                                <span class="badge bg-primary ms-3 rounded-pill">Total: 3,245</span>
+                            </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#faq1">
                                         <i class="bi bi-question-circle-fill text-primary me-2"></i>
-                                        子犬のトイレトレーニングがうまくいきません
+                                        「凶爪」カテゴリの個体が隔離壁（バリア）を攻撃し始めました。対処法は？
                                     </button>
                                 </h2>
                                 <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <div class="mb-3">
-                                            <span class="badge-category">犬</span>
-                                            <span class="badge-category" style="background: #8b5cf6;">しつけ</span>
-                                        </div>
-                                        <div class="answer-highlight">
-                                            <h6 class="fw-bold text-success mb-2">
-                                                <i class="bi bi-check-circle-fill"></i> ベストアンサー
-                                            </h6>
-                                            <p>トイレトレーニングは根気が必要です。成功したら褒めること、失敗しても叱らないことが重要です。</p>
-                                        </div>
-                                        <div class="question-meta">
-                                            <div class="meta-item">
-                                                <i class="bi bi-person-circle"></i><span>ドッグトレーナー山田</span>
-                                            </div>
-                                            <div class="meta-item">
-                                                <i class="bi bi-hand-thumbs-up"></i><span>312人が参考になった</span>
-                                            </div>
-                                        </div>
+                                        <p class="mb-2 fw-bold">電磁シールドの出力を最大にし、鎮静ガスを充填してください。</p>
+                                        <p class="text-muted mb-3">
+                                            隔離壁への物理攻撃が続く場合、個体のストレス値が限界を超えている可能性があります。
+                                            以下の手順を試行してください：
+                                        </p>
+                                        <ul class="text-muted small bg-light p-3 rounded">
+                                            <li>コントロールパネルから「電圧シールド」をLv.5に昇圧</li>
+                                            <li>照明を赤色灯（緊急モード）に切り替え</li>
+                                            <li>それでも収まらない場合、麻酔銃の使用許可を申請してください（Code: SC-D99）</li>
+                                        </ul>
                                         <div class="mt-3">
                                             <button class="helpful-btn">
                                                 <i class="bi bi-hand-thumbs-up"></i> 参考になった
@@ -353,29 +378,92 @@
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#faq2">
                                         <i class="bi bi-question-circle-fill text-primary me-2"></i>
-                                        猫が急にご飯を食べなくなりました
+                                        メイン水槽のアンモニア値が警告レベルを超えました。濾過装置は稼働中です
                                     </button>
                                 </h2>
                                 <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <div class="mb-3">
-                                            <span class="badge-category" style="background: #fb923c;">猫</span>
-                                            <span class="badge-category" style="background: #ef4444;">健康</span>
+                                        <p class="mb-2 fw-bold">バイオフィルターの飽和が疑われます。緊急換水とバクテリア追加を行ってください。</p>
+                                        <p class="text-muted mb-0">
+                                            巨大生物の排泄量が濾過能力を一時的に上回った可能性があります。
+                                            予備タンクから新鮮な海水300トンを注入し、濃度を希釈してください。
+                                            同時に、バクテリア製剤「GENESIS-BIO Type-G」を規定量の2倍投入することを推奨します。
+                                        </p>
+                                        <div class="mt-3">
+                                            <button class="helpful-btn">
+                                                <i class="bi bi-hand-thumbs-up"></i> 参考になった
+                                            </button>
                                         </div>
-                                        <div class="answer-highlight">
-                                            <h6 class="fw-bold text-success mb-2">
-                                                <i class="bi bi-check-circle-fill"></i> ベストアンサー
-                                            </h6>
-                                            <p>24時間以上食事を取らない場合は早めに動物病院を受診してください。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3">
+                                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+                                        自動給餌システムから餌が出ません。「粘度エラー」が表示されています。
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-2 fw-bold">プランクトンペーストの水分量が不足しています。</p>
+                                        <p class="text-muted mb-0">
+                                            給餌サイロ内の撹拌機（ミキサー）を確認してください。
+                                            ペースト粘度が規定値「4.5」を超えると、配管詰まり防止のため自動停止します。
+                                            希釈用バルブを手動で開放し、粘度を下げてからシステムを再起動してください。
+                                        </p>
+                                        <div class="mt-3">
+                                            <button class="helpful-btn">
+                                                <i class="bi bi-hand-thumbs-up"></i> 参考になった
+                                            </button>
                                         </div>
-                                        <div class="question-meta">
-                                            <div class="meta-item">
-                                                <i class="bi bi-person-circle"></i><span>獣医師・佐藤</span>
-                                            </div>
-                                            <div class="meta-item">
-                                                <i class="bi bi-hand-thumbs-up"></i><span>487人が参考になった</span>
-                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4">
+                                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+                                        深淵エリアから、低周波の振動音が断続的に聞こえます。
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-2 fw-bold">「古代」カテゴリの生物が覚醒状態にある可能性があります。</p>
+                                        <p class="text-muted mb-0">
+                                            ハイドロフォン（水中マイク）のゲインを上げて、波形を解析してください。
+                                            一定のリズムがある場合、求愛行動か威嚇音です。
+                                            共鳴によりアクリル壁に負荷がかかる場合は、音響相殺装置（アンチノイズ）を起動してください。
+                                        </p>
+                                        <div class="mt-3">
+                                            <button class="helpful-btn">
+                                                <i class="bi bi-hand-thumbs-up"></i> 参考になった
+                                            </button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq5">
+                                        <i class="bi bi-question-circle-fill text-primary me-2"></i>
+                                        アクリルパネルの研磨メンテナンスはどの頻度で行うべきですか？
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p class="mb-2 fw-bold">自動清掃ロボットは毎日、有人点検は週1回が規定です。</p>
+                                        <p class="text-muted mb-0">
+                                            内面の藻類除去は自走式ロボットが行いますが、深さ20m以上の高圧エリアでは
+                                            微細なクラックを目視確認するため、毎週火曜日にテクニカルダイバーによる潜水点検が義務付けられています。
+                                            厚さが600mmを下回った箇所がある場合、補強リペアを申請してください。
+                                        </p>
                                         <div class="mt-3">
                                             <button class="helpful-btn">
                                                 <i class="bi bi-hand-thumbs-up"></i> 参考になった
@@ -398,27 +486,27 @@
 
                 <div class="sidebar-card">
                     <h5 class="fw-bold mb-4" style="color: var(--brown-color);">
-                        <i class="bi bi-trophy-fill text-warning"></i> 人気の質問
+                        <i class="bi bi-trophy-fill text-warning"></i> 頻出インシデント (TOP 3)
                     </h5>
                     <div class="ranking-item">
                         <div class="ranking-number gold">1</div>
                         <div>
-                            <h6 class="fw-bold mb-1 small">子犬のワクチン接種スケジュール</h6>
-                            <small class="text-muted">523人が参考にしました</small>
+                            <h6 class="fw-bold mb-1 small">全区画停電時の酸素供給バイパス手順</h6>
+                            <small class="text-muted">8,920件のアクセス</small>
                         </div>
                     </div>
                     <div class="ranking-item">
                         <div class="ranking-number silver">2</div>
                         <div>
-                            <h6 class="fw-bold mb-1 small">猫の発情期の対処法</h6>
-                            <small class="text-muted">487人が参考にしました</small>
+                            <h6 class="fw-bold mb-1 small">「凶爪」個体が鎮静ガスに耐性を持った場合</h6>
+                            <small class="text-muted">6,540件のアクセス</small>
                         </div>
                     </div>
                     <div class="ranking-item">
                         <div class="ranking-number bronze">3</div>
                         <div>
-                            <h6 class="fw-bold mb-1 small">ハムスターの寿命について</h6>
-                            <small class="text-muted">412人が参考にしました</small>
+                            <h6 class="fw-bold mb-1 small">深海加圧ポンプの異常振動と緊急停止</h6>
+                            <small class="text-muted">4,110件のアクセス</small>
                         </div>
                     </div>
                 </div>
