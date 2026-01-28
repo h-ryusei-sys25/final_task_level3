@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>記録送信フォーム_AQUARIUM GENESIS</title>
+    <title>質問送信フォーム_AQUARIUM GENESIS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
@@ -417,16 +417,15 @@
             <div class="row align-items-cente">
                 <div class="col-md-8 text-center">
                     <h1 class="display-4 fw-bold mb-3" style="color: var(--brown-color);">
-                        <i class="bi bi-terminal"></i>新規インシデント
+                        <i class="bi bi-question-circle me-2"></i>Q&A 投稿フォーム
                     </h1>
                     <p class="text-secondary mb-0">
-                        生体モニタリングデータ、設備異常、定期メンテナンスの記録をアーカイブします。
-
+                        飼育・管理に関する質問を投稿するフォームです
                     </p>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                    <a href="./pet-guide-record.html" class="btn btn-light rounded-pill px-4 fw-bold shadow-sm">
-                        <i class="bi bi-arrow-left me-2"></i>記録・健康管理へ戻る
+                    <a href="./pet-guide-qa.html" class="btn btn-light rounded-pill px-4 fw-bold shadow-sm">
+                        <i class="bi bi-arrow-left me-2"></i>Q&A一覧へ戻る
                     </a>
                 </div>
             </div>
@@ -446,153 +445,73 @@
                                 基本パラメータ
                             </h3>
 
-                            <div class="row mb-4">
-                                <div class="col-md-6">
-                                    <label class="form-label">発生日時</label>
-                                    <input type="datetime-local" class="form-control" required>
+                            <div class="mb-4">
+                                <div class="col-md-12">
+                                    <label class="form-label">投稿者名 <span class="required-mark">*</span></label>
+                                    <input type="text" class="form-control form-control-lg" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">対象</label>
-                                    <select class="form-select" required>
-                                        <option value="" selected>選択してください</option>
-                                        <option value="ジンベエザメ">ジンベエザメ</option>
-                                        <option value="リーフィーシードラゴン">リーフィーシードラゴン</option>
-                                        <option value="クロマグロ">クロマグロ</option>
+                                <div class="col-md-12">
+                                    <label class="form-label">質問カテゴリー <span class="required-mark">*</span></label>
+                                    <select class="form-select form-select-lg" required>
+                                        <option value="" selected disabled>カテゴリーを選択してください...</option>
+                                        <option>給餌</option>
+                                        <option>水質</option>
+                                        <option>設備メンテナンス</option>
+                                        <option>生体</option>
+                                        <option>その他</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="col-12">
-                                <label class="form-label">警戒レベル</label>
+                            <div class="mb-4">
+                                <label class="form-label">緊急度</label>
                                 <div class="d-flex gap-2">
-                                    <input type="radio" class="btn-check" name="weather" id="w1" checked>
-                                    <label class="btn btn-outline-custom flex-grow-1 py-2" for="w1">
-                                        <i class="bi bi-check-circle me-2"></i>低
+                                    <input type="radio" class="btn-check" name="urgency" id="urgency1" checked>
+                                    <label class="btn btn-outline-secondary flex-grow-1" for="urgency1">
+                                        <i class="bi bi-bell-fill me-2"></i>通常
                                     </label>
 
-                                    <input type="radio" class="btn-check" name="weather" id="w2">
-                                    <label class="btn btn-outline-custom flex-grow-1 py-2" for="w2">
-                                        <i class="bi bi-exclamation-circle me-2"></i>中
+                                    <input type="radio" class="btn-check" name="urgency" id="urgency2">
+                                    <label class="btn btn-outline-warning text-dark flex-grow-1" for="urgency2">
+                                        <i class="bi bi-exclamation-triangle me-2"></i>高
                                     </label>
 
-                                    <input type="radio" class="btn-check" name="weather" id="w3">
-                                    <label class="btn btn-outline-custom flex-grow-1 py-2" for="w3">
-                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>高
+                                    <input type="radio" class="btn-check" name="urgency" id="urgency3">
+                                    <label class="btn btn-outline-danger flex-grow-1" for="urgency3">
+                                        <i class="bi bi-exclamation-octagon-fill me-2"></i>緊急
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="mb-4">
-                                <label class="form-label">ログ種別<span class="required-mark">*</span></label>
-                                <div class="category-options">
-                                    <div class="category-option">
-                                        <input type="radio" name="category" id="cat-checkup" value="checkup" required>
-                                        <label for="cat-checkup" class="category-label">
-                                            <i class="bi bi-basket" style="color: #3b82f6;"></i>
-                                            <span>給餌</span>
-                                        </label>
-                                    </div>
-                                    <div class="category-option">
-                                        <input type="radio" name="category" id="cat-vaccine" value="vaccine">
-                                        <label for="cat-vaccine" class="category-label">
-                                            <i class="bi bi-droplet-half" style="color: #f59e0b;"></i>
-                                            <span>水質</span>
-                                        </label>
-                                    </div>
-                                    <div class="category-option">
-                                        <input type="radio" name="category" id="cat-weight" value="weight">
-                                        <label for="cat-weight" class="category-label">
-                                            <i class="bi bi-gear" style="color: #10b981;"></i>
-                                            <span>設備</span>
-                                        </label>
-                                    </div>
-                                    <div class="category-option">
-                                        <input type="radio" name="category" id="cat-medication" value="medication">
-                                        <label for="cat-medication" class="category-label">
-                                            <i class="bi bi-activity" style="color: #ec4899;"></i>
-                                            <span>生体</span>
-                                        </label>
-                                    </div>
+                            <!-- 質問内容 -->
+                            <div class="form-section">
+                                <h3 class="section-title">
+                                    <i class="bi bi-chat-left-text-fill"></i>
+                                    質問内容の詳細
+                                </h3>
+
+                                <div class="mb-4">
+                                    <label class="form-label">質問の要約/タイトル<span class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" placeholder="例: 給餌量と成長率の相関について" required>
                                 </div>
-                            </div>
-                        </div>
 
-                        <!-- 記録内容 -->
-                        <div class="form-section">
-                            <h3 class="section-title">
-                                <i class="bi bi-chat-left-text-fill"></i>
-                                記録内容
-                            </h3>
-
-                            <div class="mb-4">
-                                <label class="form-label">件名<span class="required-mark">*</span></label>
-                                <input type="text" class="form-control" placeholder="例: メイン水槽B区画における水温低下アラート" required>
-                                <div class="help-text">
-                                    <i class="bi bi-lightbulb"></i> 簡潔でわかりやすいタイトルをつけましょう
+                                <div class="mb-4">
+                                    <label class="form-label">具体的な質問内容<span class="required-mark">*</span></label>
+                                    <textarea class="form-control" placeholder="具体的な状況や背景、不明な点について詳しく記述してください。"
+                                        required></textarea>
                                 </div>
                             </div>
 
-                            <div class="mb-4">
-                                <label class="form-label">詳細報告<span class="required-mark">*</span></label>
-                                <textarea class="form-control"
-                                    placeholder="発生事象、観測された数値データ、および実施した一次対応について具体的かつ客観的に記述してください..."
-                                    required></textarea>
-                            </div>
-
-                            <div class="mb-0">
-                                <label class="form-label">関連エラーコード</label>
-                                <input type="text" class="form-control"
-                                    placeholder="例: #Err-404, #Bio-Alert, #Maint-Req (カンマ区切りで入力)">
-                            </div>
-                        </div>
-
-                        <!-- 写真アップロード -->
-                        <div class="form-section">
-                            <h3 class="section-title">
-                                <i class="bi bi-images"></i>
-                                写真を追加（任意）
-                            </h3>
-
-                            <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
-                                <i class="bi bi-cloud-upload"></i>
-                                <div class="upload-text">クリックまたはドラッグ&ドロップで写真を追加</div>
-                                <div class="upload-hint">PNG, JPG, GIF（最大5MB、最大10枚まで）</div>
-                                <input type="file" id="fileInput" multiple accept="image/*" style="display: none;"
-                                    onchange="previewImages(event)">
-                            </div>
-
-                            <div class="image-preview-container" id="imagePreviewContainer">
-                                <!-- プレビュー画像がここに表示されます -->
-                            </div>
-                        </div>
-
-                        <!-- タグ -->
-                        <div class="form-section">
-                            <h3 class="section-title">
-                                <i class="bi bi-tags-fill"></i>
-                                タグ（任意）
-                            </h3>
-
-                            <div class="mb-3">
-                                <label class="form-label">タグを追加</label>
-                                <div class="tag-input-container" id="tagContainer">
-                                    <input type="text" class="tag-input-field" id="tagInput" placeholder="タグを入力してEnter">
+                            <!-- ボタン -->
+                            <div class="text-center mt-4">
+                                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                                    <button type="button" class="btn btn-draft" onclick="saveDraft()">
+                                        <i class="bi bi-save"></i> 下書き保存
+                                    </button>
+                                    <button type="submit" class="btn btn-submit">
+                                        <i class="bi bi-check-circle"></i> 投稿する
+                                    </button>
                                 </div>
-                                <div class="help-text">
-                                    <i class="bi bi-info-circle"></i> Enterキーでタグを追加できます
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ボタン -->
-                        <div class="text-center mt-4">
-                            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                                <button type="button" class="btn btn-draft" onclick="saveDraft()">
-                                    <i class="bi bi-save"></i> 下書き保存
-                                </button>
-                                <button type="submit" class="btn btn-submit">
-                                    <i class="bi bi-check-circle"></i> 投稿する
-                                </button>
                             </div>
                         </div>
                     </form>
@@ -603,30 +522,32 @@
             <div class="col-lg-4">
                 <div class="info-card">
                     <h5 class="info-card-title">
-                        <i class="bi bi-lightbulb-fill"></i>入力ガイドライン
+                        <i class="bi bi-lightbulb-fill"></i>投稿ガイドライン
                     </h5>
                     <ul>
-                        <li>数値データは単位まで正確に記録すること。</li>
-                        <li>生体異常時は、バイタル数値の変動を必ず記載すること。</li>
-                        <li>設備トラブルの場合、影響範囲（セクター）を明記すること。</li>
-                        <li>憶測と事実は明確に分けて記述すること。</li>
+                        <li><i class="bi bi-check-circle-fill"></i> 質問は具体的かつ簡潔に記述してください。</li>
+                        <li><i class="bi bi-check-circle-fill"></i> 既存のQ&Aを確認してから投稿してください。</li>
+                        <li><i class="bi bi-check-circle-fill"></i> 機密性の高いデータを含めないでください。</li>
+                        <li><i class="bi bi-check-circle-fill"></i> 回答には時間がかかる場合があります。</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
-                    <h5 class="info-card-title">
-                        <i class="bi bi-shield-lock-fill"></i>エビデンス添付規定
-                    </h5>
-                    <p class="text-muted small mb-0">
-                        異常報告には、現場写真またはセンサーログのスクリーンショット添付が義務付けられています。<br>
-                        全てのアップロードデータは暗号化され、中央サーバーにアーカイブされます。
+                    <h6 class="fw-bold mb-3">
+                        <i class="bi bi-search text-primary me-2"></i>よくある質問 (Q&A)
+                    </h6>
+                    <p class="text-muted small mb-3">
+                        過去の質問と回答を検索できます。<br>
+                        類似の質問がないかご確認ください。
                     </p>
+                    <a href="./pet-guide-qa.html" class="btn btn-outline-primary w-100 rounded-pill">
+                        Q&A一覧を開く
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Toast通知 -->
     <div class="toast-container">
         <div class="toast toast-custom" id="successToast" role="alert">
             <div class="toast-header">

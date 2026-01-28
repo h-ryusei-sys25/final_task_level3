@@ -4,51 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetLife - 飼育記録・健康管理</title>
+    <title>記録_AQUARIUM GENESIS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
-        :root {
-            --primary-color: #10b981;
-            --secondary-color: #f59e0b;
-            --accent-color: #fb923c;
-            --brown-color: #78350f;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fef3c7;
-        }
-
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            color: var(--primary-color) !important;
-            font-size: 1.5rem;
-        }
-
-        .nav-link {
-            color: var(--brown-color) !important;
-            font-weight: 500;
-            margin: 0 10px;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-color) !important;
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, #dcfce7 0%, #fed7aa 100%);
-            padding: 60px 0;
-            border-radius: 0 0 50px 50px;
-            margin-bottom: 40px;
-        }
-
         .pet-profile-card {
             background: white;
             border-radius: 30px;
@@ -123,7 +82,7 @@
         }
 
         .progress-bar-custom {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, aqua, blue);
             border-radius: 50px;
             font-weight: bold;
         }
@@ -141,7 +100,7 @@
         }
 
         .table-custom thead {
-            background: linear-gradient(135deg, #dcfce7, #fed7aa);
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(0, 0, 255, 0.1));
         }
 
         .table-custom thead th {
@@ -201,7 +160,7 @@
         }
 
         .btn-add-record {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, aqua, blue);
             border: none;
             color: white;
             padding: 15px 40px;
@@ -216,34 +175,42 @@
             box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
         }
 
-        .timeline-card {
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 60px;
+        .timeline {
+            background-color: white;
+            padding: 4%;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .timeline-icon {
+        .timeline-card {
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            border-left: 2px solid #334155;
+        }
+
+        .timeline-card:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+
+        .timeline-card>div:first-child {
             position: absolute;
-            left: 20px;
-            top: 20px;
-            width: 40px;
-            height: 40px;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+            border-width: 2px;
+            border-style: solid;
         }
 
         .timeline-date {
-            color: #6b7280;
-            font-size: 0.9rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #94a3b8;
             margin-bottom: 5px;
+            line-height: 1;
         }
 
         .chart-container {
@@ -252,14 +219,6 @@
             padding: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
-        }
-
-        footer {
-            background-color: var(--brown-color);
-            color: white;
-            padding: 40px 0;
-            margin-top: 80px;
-            border-radius: 50px 50px 0 0;
         }
 
         .alert-custom {
@@ -288,19 +247,24 @@
 
         .filter-btn:hover,
         .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, aqua, blue);
             color: white;
             border-color: transparent;
         }
+        td{
+            min-width: 10rem;
+        }
+
     </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-heart-fill text-danger"></i> PetLife
+            <a class="navbar-brand" href="./index.html">
+                <i class="bi bi-water text-primary"></i> AQUARIUM GENESIS
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -308,24 +272,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ホーム</a>
+                        <a class="nav-link" href="./index.html">ホーム</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ペット図鑑</a>
+                        <a class="nav-link" href="./pet-guide-list.html">図鑑</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">飼い方ガイド</a>
+                        <a class="nav-link" href="./pet-care-guide.html">ガイド</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Q&A</a>
+                        <a class="nav-link" href="./pet-guide-qa.html">Q&A</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">飼育記録</a>
+                        <a class="nav-link active" href="#">記録</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-success ms-3 rounded-pill fw-bold">
-                    <i class="bi bi-person-circle"></i> ログイン
-                </button>
+                <a href="./pet-login-page.html">
+                    <button class="btn btn-outline-success ms-3 rounded-pill fw-bold">
+                        <i class="bi bi-person-circle"></i> ログイン
+                    </button>
+                </a>
             </div>
         </div>
     </nav>
@@ -335,10 +301,10 @@
         <div class="container">
             <div class="text-center">
                 <h1 class="display-4 fw-bold mb-3" style="color: var(--brown-color);">
-                    <i class="bi bi-journal-text"></i> 飼育記録・健康管理
+                    <i class="bi bi-journal-text"></i> 記録・健康管理
                 </h1>
                 <p class="lead" style="color: var(--brown-color);">
-                    大切なペットの成長と健康を記録しよう
+                    成長と健康を記録しよう
                 </p>
             </div>
         </div>
@@ -349,38 +315,37 @@
         <div class="pet-profile-card">
             <div class="row align-items-center">
                 <div class="col-md-3 text-center mb-3 mb-md-0">
-                    <img src="https://placehold.co/120x120/10b981/ffffff?text=🐕" alt="モカ" class="pet-avatar">
-                    <h4 class="mt-3 mb-2 fw-bold" style="color: var(--brown-color);">モカ</h4>
-                    <p class="text-muted mb-0">柴犬 ♀</p>
+                    <img src="./img/ジンベエザメ_Gemini.png" alt="ジンベエザメ" class="pet-avatar">
+                    <h4 class="mt-3 mb-2 fw-bold" style="color: var(--brown-color);">ジンベエザメ</h4>
                 </div>
                 <div class="col-md-9">
                     <div class="row">
                         <div class="col-6 col-md-3 mb-3">
-                            <small class="text-muted d-block">年齢</small>
-                            <strong class="h5" style="color: var(--brown-color);">2歳3ヶ月</strong>
+                            <small class="text-muted d-block">全長</small>
+                            <strong class="h5" style="color: var(--brown-color);">8.54m</strong>
                         </div>
                         <div class="col-6 col-md-3 mb-3">
-                            <small class="text-muted d-block">体重</small>
-                            <strong class="h5" style="color: var(--brown-color);">8.5kg</strong>
+                            <small class="text-muted d-block">推定体重</small>
+                            <strong class="h5" style="color: var(--brown-color);">12,500kg</strong>
                         </div>
                         <div class="col-6 col-md-3 mb-3">
-                            <small class="text-muted d-block">誕生日</small>
-                            <strong class="h5" style="color: var(--brown-color);">2022/8/15</strong>
+                            <small class="text-muted d-block">月間成長率</small>
+                            <strong class="h5" style="color: var(--brown-color);">+1.2 cm/mo</strong>
                         </div>
                         <div class="col-6 col-md-3 mb-3">
-                            <small class="text-muted d-block">飼育日数</small>
-                            <strong class="h5" style="color: var(--brown-color);">826日</strong>
+                            <small class="text-muted d-block">1日摂餌量</small>
+                            <strong class="h5" style="color: var(--brown-color);">35.0 kg/day</strong>
                         </div>
                     </div>
                     <div class="mt-2">
                         <span class="info-badge">
-                            <i class="bi bi-heart-pulse"></i> 健康状態: 良好
+                            <i class="bi bi-heart-pulse"></i> 健康状態：良好
                         </span>
                         <span class="info-badge">
-                            <i class="bi bi-shield-check"></i> ワクチン接種済み
+                            <i class="bi bi-droplet-half"></i> 水質状態：良好
                         </span>
                         <span class="info-badge">
-                            <i class="bi bi-clipboard-check"></i> 次回健診: 2024/12/15
+                            <i class="bi bi-clipboard-check"></i> 次回獣医師定期診断: 2026/8/15
                         </span>
                     </div>
                 </div>
@@ -391,38 +356,38 @@
         <div class="row g-4 mb-4">
             <div class="col-md-3 col-sm-6">
                 <div class="stat-card">
-                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--primary-color);">
-                        <i class="bi bi-calendar-check"></i>
+                    <div class="stat-icon" style="background: rgba(6, 182, 212, 0.1); color: #06b6d4;">
+                        <i class="bi bi-thermometer-half"></i>
                     </div>
-                    <div class="stat-number">156</div>
-                    <p class="text-muted mb-0">記録日数</p>
+                    <div class="stat-number">24.5°C</div>
+                    <p class="text-muted mb-0">水温</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="stat-card">
-                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--secondary-color);">
-                        <i class="bi bi-graph-up"></i>
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <i class="bi bi-activity"></i>
                     </div>
-                    <div class="stat-number">+0.8kg</div>
-                    <p class="text-muted mb-0">体重変化（6ヶ月）</p>
+                    <div class="stat-number">98%</div>
+                    <p class="text-muted mb-0">酸素飽和度</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="stat-card">
-                    <div class="stat-icon" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">
-                        <i class="bi bi-hospital"></i>
+                    <div class="stat-icon" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+                        <i class="bi bi-speedometer2"></i>
                     </div>
-                    <div class="stat-number">8回</div>
-                    <p class="text-muted mb-0">動物病院訪問</p>
+                    <div class="stat-number">1.4 atm</div>
+                    <p class="text-muted mb-0">水圧</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="stat-card">
-                    <div class="stat-icon" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">
-                        <i class="bi bi-camera"></i>
+                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <i class="bi bi-heart-pulse"></i>
                     </div>
-                    <div class="stat-number">234</div>
-                    <p class="text-muted mb-0">写真・思い出</p>
+                    <div class="stat-number">Normal</div>
+                    <p class="text-muted mb-0">ストレス値</p>
                 </div>
             </div>
         </div>
@@ -433,56 +398,28 @@
                 <div class="progress-card">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="fw-bold mb-0" style="color: var(--brown-color);">
-                            <i class="bi bi-droplet-fill text-info"></i> 今日の水分摂取
+                            <i class="bi bi-activity text-info"></i>給餌サイロ残量
                         </h5>
-                        <span class="fw-bold" style="color: var(--primary-color);">750ml / 1000ml</span>
+                        <span class="fw-bold" style="color: var(--primary-color);">350kg / 500kg</span>
                     </div>
                     <div class="progress progress-custom">
-                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 75%">75%</div>
+                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 70%"></div>
                     </div>
-                    <small class="text-muted mt-2 d-block">目標まであと250ml</small>
+                    <small class="text-muted mt-2 d-block">在庫十分</small>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="progress-card">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="fw-bold mb-0" style="color: var(--brown-color);">
-                            <i class="bi bi-moon-stars-fill" style="color: #8b5cf6;"></i> 今日の睡眠時間
+                            <i class="bi bi-activity text-warning" style="color: #8b5cf6;"></i>濾過負荷率
                         </h5>
-                        <span class="fw-bold" style="color: var(--primary-color);">10時間 / 12時間</span>
+                        <span class="fw-bold" style="color: var(--primary-color);">85% (High)</span>
                     </div>
                     <div class="progress progress-custom">
-                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 83%">83%</div>
+                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 85%"></div>
                     </div>
-                    <small class="text-muted mt-2 d-block">順調に休息できています</small>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="progress-card">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h5 class="fw-bold mb-0" style="color: var(--brown-color);">
-                            <i class="bi bi-lightning-charge-fill text-warning"></i> 今日の運動量
-                        </h5>
-                        <span class="fw-bold" style="color: var(--primary-color);">8,500歩 / 10,000歩</span>
-                    </div>
-                    <div class="progress progress-custom">
-                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 85%">85%</div>
-                    </div>
-                    <small class="text-muted mt-2 d-block">目標まであと1,500歩</small>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="progress-card">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h5 class="fw-bold mb-0" style="color: var(--brown-color);">
-                            <i class="bi bi-award-fill text-danger"></i> 今月のしつけ達成率
-                        </h5>
-                        <span class="fw-bold" style="color: var(--primary-color);">18回 / 20回</span>
-                    </div>
-                    <div class="progress progress-custom">
-                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 90%">90%</div>
-                    </div>
-                    <small class="text-muted mt-2 d-block">素晴らしい進捗です！</small>
+                    <small class="text-muted mt-2 d-block">高負荷状態</small>
                 </div>
             </div>
         </div>
@@ -493,30 +430,47 @@
                 <!-- アラート -->
                 <div class="alert alert-warning alert-custom" role="alert">
                     <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                    <strong>次回のワクチン接種が近づいています！</strong>
-                    <p class="mb-0 mt-2">2024年12月15日に年次ワクチン接種の予定です。動物病院の予約をお忘れなく。</p>
+                    <strong>次回の獣医師定期検診が近づいています！</strong>
+                    <p class="mb-0 mt-2">2026年8月15日(14:00-16:00)に定期診断があります。（Dr. Kujo）</p>
                 </div>
 
                 <!-- フィルターボタン -->
                 <div class="record-table">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="fw-bold mb-0" style="color: var(--brown-color);">
-                            <i class="bi bi-clipboard2-data"></i> 健康記録一覧
+                            <i class="bi bi-clipboard2-data"></i>インシデント記録
                         </h4>
-                        <button class="btn btn-add-record">
-                            <i class="bi bi-plus-circle"></i> 記録を追加
-                        </button>
+                        <a href="./pet-guide-form.html">
+                            <button class="btn btn-add-record">
+                                <i class="bi bi-plus-circle"></i> 記録を追加
+                            </button>
+                        </a>
                     </div>
 
-                    <div class="filter-buttons">
-                        <button class="filter-btn active">すべて</button>
-                        <button class="filter-btn">健康診断</button>
-                        <button class="filter-btn">ワクチン</button>
-                        <button class="filter-btn">体重測定</button>
-                        <button class="filter-btn">投薬</button>
+                    <div class="monitor-card">
+                        <div class="p-4">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <label class="small text-muted mb-1">種類</label>
+                                        <select class="form-select border-secondary">
+                                            <option>給餌記録 </option>
+                                            <option>水質検査 </option>
+                                            <option>異常検知</option>
+                                            <option>メンテナンス</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="small text-muted mb-1">メモ</label>
+                                        <input type="text" class="form-control border-secondary"
+                                            placeholder="例: オキアミ 30kg">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="overflow-x: auto;">
                         <table class="table table-custom">
                             <thead>
                                 <tr>
@@ -529,78 +483,92 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>2024/11/18</td>
-                                    <td><span class="event-badge event-weight">体重測定</span></td>
-                                    <td><strong>8.5kg</strong></td>
-                                    <td>前月比+0.2kg、健康的な増加</td>
+                                    <td>2026/05/20</td>
+                                    <td><span
+                                            class="badge bg-info bg-opacity-10 text-info border border-info">給餌記録</span>
+                                    </td>
+                                    <td><strong>オキアミペースト 35kg</strong></td>
+                                    <td>摂餌反応良好 (反応速度 1.2秒)、残餌なし</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2024/11/10</td>
-                                    <td><span class="event-badge event-checkup">健康診断</span></td>
-                                    <td>定期検診</td>
-                                    <td>異常なし、健康状態良好</td>
+                                    <td>2026/05/18</td>
+                                    <td><span
+                                            class="badge bg-success bg-opacity-10 text-success border border-success">水質検査</span>
+                                    </td>
+                                    <td><strong>pH 8.2 / 水温 24.5°C</strong></td>
+                                    <td>全パラメータ正常範囲内、硝酸塩濃度 < 5ppm</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2024/11/05</td>
-                                    <td><span class="event-badge event-medication">投薬</span></td>
-                                    <td>フィラリア予防薬</td>
-                                    <td>月例投薬、問題なく服用</td>
+                                    <td>2026/05/15</td>
+                                    <td><span
+                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary">メンテナンス</span>
+                                    </td>
+                                    <td><strong>アクリルパネル研磨</strong></td>
+                                    <td>セクターD (観覧面) の微細傷補修完了、透明度回復</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2024/10/20</td>
-                                    <td><span class="event-badge event-weight">体重測定</span></td>
-                                    <td><strong>8.3kg</strong></td>
-                                    <td>適正体重を維持</td>
+                                    <td>2026/05/10</td>
+                                    <td><span
+                                            class="badge bg-danger bg-opacity-10 text-danger border border-danger">異常検知</span>
+                                    </td>
+                                    <td><strong>水流ポンプB 異音</strong></td>
+                                    <td>インペラ軸受の摩耗を確認、予備機へ切り替え実施</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2024/10/05</td>
-                                    <td><span class="event-badge event-medication">投薬</span></td>
-                                    <td>フィラリア予防薬</td>
-                                    <td>月例投薬完了</td>
+                                    <td>2026/05/05</td>
+                                    <td><span
+                                            class="badge bg-info bg-opacity-10 text-info border border-info">給餌記録</span>
+                                    </td>
+                                    <td><strong>サプリメント団子 5kg</strong></td>
+                                    <td>ビタミン剤・整腸剤添加、全量摂取を確認</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2024/09/15</td>
-                                    <td><span class="event-badge event-vaccine">ワクチン</span></td>
-                                    <td>狂犬病ワクチン</td>
-                                    <td>年次接種完了、副作用なし</td>
+                                    <td>2026/04/28</td>
+                                    <td><span
+                                            class="badge bg-success bg-opacity-10 text-success border border-success">水質検査</span>
+                                    </td>
+                                    <td><strong>塩分濃度 3.4%</strong></td>
+                                    <td>若干の低下傾向あり、人工海水 200L 追加投入</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>2024/09/08</td>
-                                    <td><span class="event-badge event-checkup">健康診断</span></td>
-                                    <td>歯科検診</td>
-                                    <td>歯石除去実施、口腔内良好</td>
+                                    <td>2026/04/20</td>
+                                    <td><span
+                                            class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary">メンテナンス</span>
+                                    </td>
+                                    <td><strong>プロテインスキマー清掃</strong></td>
+                                    <td>カップ洗浄および吸気ノズルの詰まり除去</td>
                                     <td>
-                                        <button class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <button class="btn btn-sm btn-outline-secondary rounded-pill">
                                             <i class="bi bi-pencil"></i>
                                         </button>
                                     </td>
@@ -625,98 +593,44 @@
                 </div>
             </div>
 
-            <!-- 右カラム：タイムライン -->
             <div class="col-lg-4">
                 <div class="progress-card mb-4">
-                    <h5 class="fw-bold mb-4" style="color: var(--brown-color);">
-                        <i class="bi bi-clock-history"></i> 最近のアクティビティ
-                    </h5>
-
-                    <div class="timeline-card">
-                        <div class="timeline-icon"
-                            style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-                            <i class="bi bi-camera-fill"></i>
-                        </div>
-                        <div class="timeline-date">2時間前</div>
-                        <h6 class="fw-bold mb-1">散歩の写真を追加</h6>
-                        <p class="text-muted mb-0 small">ロープトイで大喜び</p>
-                    </div>
-                </div>
-
-                <!-- 体重推移グラフ（簡易版） -->
-                <div class="chart-container">
-                    <h5 class="fw-bold mb-4" style="color: var(--brown-color);">
-                        <i class="bi bi-graph-up-arrow"></i> 体重推移（6ヶ月）
-                    </h5>
-                    <div class="text-center">
-                        <img src="https://placehold.co/350x200/dcfce7/10b981?text=体重推移グラフ" alt="体重推移グラフ"
-                            class="img-fluid rounded">
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-6 text-center">
-                            <small class="text-muted d-block">最低体重</small>
-                            <strong class="text-info">7.8kg</strong>
-                        </div>
-                        <div class="col-6 text-center">
-                            <small class="text-muted d-block">最高体重</small>
-                            <strong class="text-danger">8.6kg</strong>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- おすすめアクション -->
-                <div class="progress-card">
-                    <h5 class="fw-bold mb-3" style="color: var(--brown-color);">
-                        <i class="bi bi-lightbulb-fill text-warning"></i> おすすめアクション
-                    </h5>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-outline-success rounded-pill">
-                            <i class="bi bi-camera"></i> 今日の写真を追加
-                        </button>
-                        <button class="btn btn-outline-primary rounded-pill">
-                            <i class="bi bi-calendar-check"></i> 次回検診を予約
-                        </button>
-                        <button class="btn btn-outline-warning rounded-pill">
-                            <i class="bi bi-download"></i> 記録をエクスポート
-                        </button>
-                    </div>
+                    <h6 class="fw-bold mb-2"><i class="bi bi-bell-fill me-2"></i>SYSTEM ALERTS</h6>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2 border-bottom border-danger pb-2 border-opacity-25">
+                            <strong>[Filter-B]</strong> 交換時期が接近しています (残り寿命 12%)
+                        </li>
+                        <li>
+                            <strong>[Stock]</strong> 液体窒素の在庫低下 (要発注)
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="timeline-card">
-            <div class="timeline-icon" style="background: linear-gradient(135deg, #10b981, #14b8a6);">
-                <i class="bi bi-clipboard-check-fill"></i>
-            </div>
-            <div class="timeline-date">今日 8:30</div>
-            <h6 class="fw-bold mb-1">体重測定完了</h6>
-            <p class="text-muted mb-0 small">8.5kg（前月比+0.2kg）</p>
-        </div>
 
-        <div class="timeline-card">
-            <div class="timeline-icon" style="background: linear-gradient(135deg, #f59e0b, #fb923c);">
-                <i class="bi bi-droplet-fill"></i>
-            </div>
-            <div class="timeline-date">今日 7:00</div>
-            <h6 class="fw-bold mb-1">水分補給記録</h6>
-            <p class="text-muted mb-0 small">朝食後 250ml</p>
-        </div>
+            <h5 class="fw-bold mb-3 text-muted ms-2">最近のアクティビティ</h5>
+            <div class="timeline">
+                <div class="timeline-card">
+                    <div class="bg-dark border-info"></div>
+                    <div class="timeline-date">2026-05-20 14:30:00</div>
+                    <h6 class="text-white fw-bold"><i class="bi bi-basket me-2 text-info"></i>給餌プロセス完了</h6>
+                    <p class="text-muted small mb-0">オキアミペースト 35kg を自動サイロより投入。摂餌反応良好（反応速度 1.2秒）。食べ残しなし。</p>
+                </div>
 
-        <div class="timeline-card">
-            <div class="timeline-icon" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">
-                <i class="bi bi-hospital-fill"></i>
-            </div>
-            <div class="timeline-date">昨日 14:30</div>
-            <h6 class="fw-bold mb-1">定期健診完了</h6>
-            <p class="text-muted mb-0 small">健康状態良好と診断</p>
-        </div>
+                <div class="timeline-card">
+                    <div class="bg-dark border-success"></div>
+                    <div class="timeline-date">2026-05-20 09:00:00</div>
+                    <h6 class="text-white fw-bold"><i class="bi bi-droplet-half me-2 text-success"></i>定期水質スキャン</h6>
+                    <p class="text-muted small mb-0">全パラメータ正常値範囲内。プロテインスキマーの泡立ちも良好。</p>
+                </div>
 
-        <div class="timeline-card">
-            <div class="timeline-icon" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
-                <i class="bi bi-gift-fill"></i>
+                <div class="timeline-card">
+                    <div class="bg-dark border-warning"></div>
+                    <div class="timeline-date">2026-05-19 22:15:00</div>
+                    <h6 class="text-white fw-bold"><i class="bi bi-exclamation-triangle me-2 text-warning"></i>微細振動検知
+                    </h6>
+                    <p class="text-muted small mb-0">セクターD（観覧窓付近）にて軽微な接触音を検知。カメラ映像確認の結果、異常なし。個体の偶発的な接触と判断。</p>
+                </div>
             </div>
-            <div class="timeline-date">3日前</div>
-            <h6 class="fw-bold mb-1">新しいおもちゃ購入</h6>
-            <p class="text-muted mb-0 small">公園で楽しく遊びました</p>
         </div>
     </div>
     <!-- フッター -->
@@ -725,9 +639,9 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-3">
-                        <i class="bi bi-heart-fill text-danger"></i> PetLife
+                        <i class="bi bi-water text-primary"></i> AQUARIUM GENESIS
                     </h5>
-                    <p>ペットとの幸せな暮らしを応援する情報サイト</p>
+                    <p>幅広い海洋生物の飼育をサポートする情報サイト</p>
                 </div>
                 <div class="col-md-2 mb-4">
                     <h6 class="fw-bold mb-3">サイト情報</h6>
@@ -756,7 +670,7 @@
                 </div>
             </div>
             <hr class="border-light">
-            <p class="text-center mb-0">&copy; 2024 PetLife. All rights reserved.</p>
+            <p class="text-center mb-0">&copy; 2026 AQUARIUM GENESIS. RESTRICTED ACCESS.</p>
         </div>
     </footer>
 
