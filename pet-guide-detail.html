@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>柴犬 - PetLife</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <style>  
+    <style>
         .carousel-item img {
             height: 450px;
             object-fit: cover;
             border-radius: 30px;
         }
-        
+
         .pet-header {
             background: white;
             border-radius: 30px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin: -80px 0 30px 0;
             position: relative;
             z-index: 1;
         }
-        
+
         .info-card {
             background: white;
             border-radius: 25px;
             padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 30px;
         }
-        
+
         .accordion-button:not(.collapsed) {
             background: linear-gradient(135deg, aqua, blue);
             color: white;
         }
-        
+
         .accordion-button {
             border-radius: 20px !important;
             font-weight: bold;
         }
-        
+
         .stat-badge {
             background: #dcfce7;
             color: var(--primary-color);
@@ -48,18 +49,19 @@
             border-radius: 20px;
             text-align: center;
         }
-        
+
         .sidebar-card {
             background: white;
             border-radius: 25px;
             padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             top: 20px;
             margin-bottom: 20px;
         }
     </style>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -83,15 +85,6 @@
     </nav>
 
     <div class="container mt-4">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                <li class="breadcrumb-item"><a href="#">ペット図鑑</a></li>
-                <li class="breadcrumb-item"><a href="#">犬</a></li>
-                <li class="breadcrumb-item active">柴犬</li>
-            </ol>
-        </nav>
-
         <div id="petCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#petCarousel" data-bs-slide-to="0" class="active"></button>
@@ -100,13 +93,16 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://placehold.co/1200x450/10b981/ffffff?text=Shiba+Inu+1" class="d-block w-100" alt="柴犬1">
+                    <img src="https://placehold.co/1200x450/10b981/ffffff?text=Shiba+Inu+1" class="d-block w-100"
+                        alt="柴犬1">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placehold.co/1200x450/f59e0b/ffffff?text=Shiba+Inu+2" class="d-block w-100" alt="柴犬2">
+                    <img src="https://placehold.co/1200x450/f59e0b/ffffff?text=Shiba+Inu+2" class="d-block w-100"
+                        alt="柴犬2">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://placehold.co/1200x450/fb923c/ffffff?text=Shiba+Inu+3" class="d-block w-100" alt="柴犬3">
+                    <img src="https://placehold.co/1200x450/fb923c/ffffff?text=Shiba+Inu+3" class="d-block w-100"
+                        alt="柴犬3">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#petCarousel" data-bs-slide="prev">
@@ -120,13 +116,15 @@
         <div class="pet-header">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <span class="badge" style="background: #dcfce7; color: #10b981; padding: 10px 20px; border-radius: 50px; font-size: 1rem;">初心者向け</span>
-                    <h1 class="display-4 fw-bold mt-3 mb-3" style="color: var(--brown-color);">柴犬</h1>
-                    <p class="lead text-muted">忠実で賢く、家族思いの日本原産の犬種</p>
+                    <span class="badge"
+                        style="background: #dcfce7; color: #10b981; padding: 10px 20px; border-radius: 50px; font-size: 1rem;">カテゴリ：巨海</span>
+                    <h1 class="display-4 fw-bold mt-3 mb-3" style="color: var(--brown-color);">ジンベエザメ</h1>
                 </div>
                 <div class="col-md-4 text-md-end">
-                    <button class="btn btn-success btn-lg rounded-pill mb-2 w-100"><i class="bi bi-heart"></i> お気に入り</button>
-                    <button class="btn btn-outline-warning btn-lg rounded-pill w-100"><i class="bi bi-share"></i> シェア</button>
+                    <button class="btn btn-success btn-lg rounded-pill mb-2 w-100"><i class="bi bi-heart"></i>
+                        お気に入り</button>
+                    <button class="btn btn-outline-warning btn-lg rounded-pill w-100"><i class="bi bi-share"></i>
+                        シェア</button>
                 </div>
             </div>
         </div>
@@ -134,116 +132,104 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="info-card">
-                    <h3 class="fw-bold mb-4" style="color: var(--brown-color);"><i class="bi bi-info-circle-fill text-success"></i> 基本情報</h3>
+                    <h3 class="fw-bold mb-4" style="color: var(--brown-color);"><i
+                            class="bi bi-info-circle-fill text-success"></i> 基本情報</h3>
                     <div class="row g-3 mb-4">
-                        <div class="col-md-3"><div class="stat-badge"><strong>サイズ</strong><br>中型</div></div>
-                        <div class="col-md-3"><div class="stat-badge"><strong>体重</strong><br>8-11kg</div></div>
-                        <div class="col-md-3"><div class="stat-badge"><strong>寿命</strong><br>12-15年</div></div>
-                        <div class="col-md-3"><div class="stat-badge"><strong>原産地</strong><br>日本</div></div>
+                        <div class="col-md-4">
+                            <div class="stat-badge"><strong>サイズ</strong><br>12.5 m</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-badge"><strong>平均重量</strong><br>18.5 t</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-badge"><strong>危険度</strong><br>低</div>
+                        </div>
                     </div>
-                    <p>柴犬は日本原産の小型から中型の犬種で、国の天然記念物に指定されています。忠実で勇敢な性格を持ち、家族に対して深い愛情を示します。独立心が強く、時に頑固な一面もありますが、適切なしつけを行えば素晴らしいパートナーとなります。</p>
+                    <p>
+                        現存する世界最大の魚類。性格は極めて温厚であり、人間に対する攻撃性は低い。
+                        主食はプランクトンや小魚であり、海水を大量に吸い込み、エラで濾過して捕食する「濾過摂食」を行う。
+                        当施設では、メインタンク「Oceanus」の象徴としてセクターCにて管理されている。表層から水深50m付近を緩やかに回遊する傾向がある。
+                    </p>
                 </div>
 
                 <div class="accordion mb-4" id="petAccordion">
                     <div class="accordion-item mb-3" style="border: none; border-radius: 20px;">
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#character">
-                                <i class="bi bi-heart me-2"></i> 性格・特徴
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#PointsToNote">管理上の注意点
                             </button>
                         </h2>
-                        <div id="character" class="accordion-collapse collapse show" data-bs-parent="#petAccordion">
+                        <div id="PointsToNote" class="accordion-collapse collapse show" data-bs-parent="#petAccordion">
                             <div class="accordion-body">
-                                <h5 class="fw-bold mb-3">性格</h5>
-                                <ul>
-                                    <li><strong>忠実:</strong> 家族に対して非常に忠実で、愛情深い</li>
-                                    <li><strong>勇敢:</strong> 小柄ながら勇敢で、番犬として優秀</li>
-                                    <li><strong>独立心:</strong> 独立心が強く、時に頑固な面も</li>
-                                    <li><strong>警戒心:</strong> 見知らぬ人には警戒心を示すことがある</li>
-                                </ul>
-                                <h5 class="fw-bold mb-3 mt-4">身体的特徴</h5>
-                                <ul>
-                                    <li>ピンと立った三角形の耳</li>
-                                    <li>くるりと巻いた尾</li>
-                                    <li>二重構造の被毛（換毛期には大量に抜ける）</li>
-                                    <li>赤、黒、胡麻、白の4色</li>
-                                </ul>
+                                <p class="text-muted small mb-0">
+                                    巨大な体躯ゆえ、旋回時に尾鰭がアクリルパネルや清掃ダイバーに接触するリスクがある。
+                                    給餌時は周囲の水流が激しくなるため、小型魚類およびダイバーは半径5m以内立ち入り禁止。
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item mb-3" style="border: none; border-radius: 20px;">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#care">
-                                <i class="bi bi-clipboard-heart me-2"></i> 飼い方・ケア
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#prominentMatters">特記事項
                             </button>
                         </h2>
-                        <div id="care" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
+                        <div id="prominentMatters" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
                             <div class="accordion-body">
-                                <h5 class="fw-bold mb-3">日常のケア</h5>
-                                <ul>
-                                    <li><strong>運動:</strong> 1日1-2回、30分程度の散歩が必要</li>
-                                    <li><strong>ブラッシング:</strong> 週2-3回。換毛期は毎日必要</li>
-                                    <li><strong>シャンプー:</strong> 月1-2回程度</li>
-                                    <li><strong>爪切り:</strong> 月1回程度</li>
-                                </ul>
-                                <h5 class="fw-bold mb-3 mt-4">食事</h5>
-                                <ul>
-                                    <li>年齢や体重に応じた高品質なドッグフード</li>
-                                    <li>1日2回に分けて給餌</li>
-                                    <li>肥満に注意（適正体重の維持が重要）</li>
-                                </ul>
+                                <p class="text-muted small mb-0">
+                                    左胸鰭付近に過去の野生下での網による古傷（識別痕）あり。
+                                    水温21℃以下で活動レベルが低下するため、冬季の水温管理には注意を要する。
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item mb-3" style="border: none; border-radius: 20px;">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#health">
-                                <i class="bi bi-heart-pulse me-2"></i> 健康管理
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#feed">給餌プロセス
                             </button>
                         </h2>
-                        <div id="health" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
+                        <div id="feed" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
                             <div class="accordion-body">
-                                <h5 class="fw-bold mb-3">かかりやすい病気</h5>
-                                <ul>
-                                    <li><strong>皮膚疾患:</strong> アトピー性皮膚炎など</li>
-                                    <li><strong>股関節形成不全:</strong> 遺伝的要因が関与</li>
-                                    <li><strong>膝蓋骨脱臼:</strong> 小型犬に多い疾患</li>
-                                    <li><strong>白内障:</strong> 高齢になると発症しやすい</li>
-                                </ul>
-                                <h5 class="fw-bold mb-3 mt-4">予防と対策</h5>
-                                <ul>
-                                    <li>年1回の健康診断</li>
-                                    <li>定期的なワクチン接種</li>
-                                    <li>適切な体重管理</li>
-                                    <li>十分な運動</li>
-                                </ul>
+                                <p class="text-muted">
+                                    1日2回（10:00 / 16:00）、自動給餌サイロよりオキアミペースト計35kgを投入。
+                                    投下ポイントは水流ポンプA付近に設定し、拡散させることで自然な捕食行動を促すこと。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3" style="border: none; border-radius: 20px;">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#waterQuality">水質要件
+                            </button>
+                        </h2>
+                        <div id="waterQuality" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
+                            <div class="accordion-body">
+                                <p class="text-muted">
+                                    水温: 23.0 - 26.0℃<br>
+                                    塩分濃度: 3.4 - 3.5%<br>
+                                    濾過システムBの稼働率を常に80%以上に維持し、排泄物によるアンモニア濃度上昇を防ぐこと。
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="accordion-item" style="border: none; border-radius: 20px;">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#training">
-                                <i class="bi bi-award me-2"></i> しつけ
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#health">健康診断
                             </button>
                         </h2>
-                        <div id="training" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
+                        <div id="health" class="accordion-collapse collapse" data-bs-parent="#petAccordion">
                             <div class="accordion-body">
-                                <h5 class="fw-bold mb-3">しつけのポイント</h5>
-                                <ul>
-                                    <li><strong>早期開始:</strong> 子犬の頃からの社会化が重要</li>
-                                    <li><strong>一貫性:</strong> 家族全員で統一したルールを</li>
-                                    <li><strong>ポジティブ強化:</strong> 褒めて伸ばす方法が効果的</li>
-                                    <li><strong>忍耐:</strong> 独立心が強いため、根気強く</li>
-                                </ul>
-                                <h5 class="fw-bold mb-3 mt-4">基本的なしつけ</h5>
-                                <ul>
-                                    <li>トイレトレーニング</li>
-                                    <li>お座り、待て、伏せなどの基本コマンド</li>
-                                    <li>無駄吠え防止</li>
-                                    <li>散歩時の引っ張り癖の矯正</li>
-                                </ul>
+                                <p class="text-muted">
+                                    週に1回、高解像度カメラによる体表スキャンを実施し、寄生虫の付着や外傷の有無を確認。
+                                    血液検査は四半期ごとに、保定ネットを使用せず自発的な採血トレーニングを用いて行う。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -252,7 +238,8 @@
 
             <div class="col-lg-4 sidebar">
                 <div class="sidebar-card">
-                    <h5 class="fw-bold mb-4" style="color: var(--brown-color);"><i class="bi bi-star-fill text-warning"></i> 飼いやすさ評価</h5>
+                    <h5 class="fw-bold mb-4" style="color: var(--brown-color);"><i
+                            class="bi bi-star-fill text-warning"></i> 飼いやすさ評価</h5>
                     <div class="mb-3">
                         <div class="d-flex justify-content-between mb-2"><span>初心者向け</span><strong>★★★★☆</strong></div>
                         <div class="progress" style="height: 10px; border-radius: 10px;">
@@ -280,10 +267,14 @@
                 </div>
 
                 <div class="sidebar-card">
-                    <h5 class="fw-bold mb-4" style="color: var(--brown-color);"><i class="bi bi-cash-coin"></i> 飼育費用の目安</h5>
-                    <div class="mb-2 d-flex justify-content-between"><span>初期費用</span><strong>¥150,000〜¥300,000</strong></div>
-                    <div class="mb-2 d-flex justify-content-between"><span>月額費用</span><strong>¥15,000〜¥25,000</strong></div>
-                    <div class="mb-2 d-flex justify-content-between"><span>年間医療費</span><strong>¥50,000〜¥100,000</strong></div>
+                    <h5 class="fw-bold mb-4" style="color: var(--brown-color);"><i class="bi bi-cash-coin"></i> 飼育費用の目安
+                    </h5>
+                    <div class="mb-2 d-flex justify-content-between"><span>初期費用</span><strong>¥150,000〜¥300,000</strong>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between"><span>月額費用</span><strong>¥15,000〜¥25,000</strong>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between"><span>年間医療費</span><strong>¥50,000〜¥100,000</strong>
+                    </div>
                 </div>
 
                 <div class="sidebar-card">
@@ -340,4 +331,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
