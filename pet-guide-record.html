@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetLife - 飼育記録・健康管理</title>
+    <title>記録_AQUARIUM GENESIS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
@@ -251,6 +251,10 @@
             color: white;
             border-color: transparent;
         }
+        td{
+            min-width: 10rem;
+        }
+
     </style>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -259,8 +263,8 @@
     <!-- ナビゲーションバー -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-heart-fill text-danger"></i> PetLife
+            <a class="navbar-brand" href="./index.html">
+                <i class="bi bi-water text-primary"></i> AQUARIUM GENESIS
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -271,21 +275,23 @@
                         <a class="nav-link" href="./index.html">ホーム</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pet-guide-list.html">ペット図鑑</a>
+                        <a class="nav-link" href="./pet-guide-list.html">図鑑</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./pet-care-guide.html">飼い方ガイド</a>
+                        <a class="nav-link" href="./pet-care-guide.html">ガイド</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./pet-guide-qa.html">Q&A</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">飼育記録</a>
+                        <a class="nav-link active" href="#">記録</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-success ms-3 rounded-pill fw-bold">
-                    <i class="bi bi-person-circle"></i> ログイン
-                </button>
+                <a href="./pet-login-page.html">
+                    <button class="btn btn-outline-success ms-3 rounded-pill fw-bold">
+                        <i class="bi bi-person-circle"></i> ログイン
+                    </button>
+                </a>
             </div>
         </div>
     </nav>
@@ -295,10 +301,10 @@
         <div class="container">
             <div class="text-center">
                 <h1 class="display-4 fw-bold mb-3" style="color: var(--brown-color);">
-                    <i class="bi bi-journal-text"></i> 飼育記録・健康管理
+                    <i class="bi bi-journal-text"></i> 記録・健康管理
                 </h1>
                 <p class="lead" style="color: var(--brown-color);">
-                    大切なペットの成長と健康を記録しよう
+                    成長と健康を記録しよう
                 </p>
             </div>
         </div>
@@ -464,7 +470,7 @@
                         </div>
                     </div>
 
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="overflow-x: auto;">
                         <table class="table table-custom">
                             <thead>
                                 <tr>
