@@ -411,50 +411,24 @@
 </head>
 
 <body>
-    <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-heart-fill text-danger"></i> PetLife
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.html">ホーム</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pet-guide-list.html">ペット図鑑</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pet-care-guide.html">飼い方ガイド</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pet-guide-qa.html">Q&A</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pet-guide-record.html">飼育記録</a>
-                    </li>
-                </ul>
-                <button class="btn btn-outline-success ms-3 rounded-pill fw-bold">
-                    <i class="bi bi-person-circle"></i> ログイン
-                </button>
-            </div>
-        </div>
-    </nav>
-
     <!-- ページヘッダー -->
     <div class="page-header">
         <div class="container">
-            <div class="text-center">
-                <h1 class="display-4 fw-bold mb-3" style="color: var(--brown-color);">
-                    <i class="bi bi-pencil-square"></i> 飼育記録を投稿
-                </h1>
-                <p class="lead" style="color: var(--brown-color);">
-                    今日のペットの様子を記録しましょう
-                </p>
+            <div class="row align-items-cente">
+                <div class="col-md-8 text-center">
+                    <h1 class="display-4 fw-bold mb-3" style="color: var(--brown-color);">
+                        <i class="bi bi-terminal"></i>新規インシデント
+                    </h1>
+                    <p class="text-secondary mb-0">
+                        生体モニタリングデータ、設備異常、定期メンテナンスの記録をアーカイブします。
+
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <a href="./pet-guide-record.html" class="btn btn-light rounded-pill px-4 fw-bold shadow-sm">
+                        <i class="bi bi-arrow-left me-2"></i>飼育記録へ戻る
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -469,75 +443,74 @@
                         <div class="form-section">
                             <h3 class="section-title">
                                 <i class="bi bi-info-circle-fill"></i>
-                                基本情報
+                                基本パラメータ
                             </h3>
 
-                            <div class="mb-4">
-                                <label class="form-label">ペットを選択<span class="required-mark">*</span></label>
-                                <select class="form-select" required>
-                                    <option value="">選択してください</option>
-                                    <option value="moca" selected>モカ（柴犬・♀）</option>
-                                    <option value="maru">マル（アメリカンショートヘア・♂）</option>
-                                    <option value="hana">ハナ（ミニチュアダックス・♀）</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label">記録日時<span class="required-mark">*</span></label>
-                                <div class="date-input-group">
-                                    <input type="datetime-local" class="form-control" id="recordDate" required>
-                                    <button type="button" class="quick-date-btn" onclick="setToday()">
-                                        <i class="bi bi-calendar-check"></i> 今日
-                                    </button>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">発生日時</label>
+                                    <input type="datetime-local" class="form-control" required>
                                 </div>
-                                <div class="help-text">
-                                    <i class="bi bi-info-circle"></i> 記録した日時を入力してください
+                                <div class="col-md-6">
+                                    <label class="form-label">対象</label>
+                                    <select class="form-select" required>
+                                        <option value="" selected>選択してください</option>
+                                        <option value="ジンベエザメ">ジンベエザメ</option>
+                                        <option value="リーフィーシードラゴン">リーフィーシードラゴン</option>
+                                        <option value="クロマグロ">クロマグロ</option>
+                                    </select>
                                 </div>
                             </div>
 
+                            <div class="col-12">
+                                <label class="form-label">警戒レベル</label>
+                                <div class="d-flex gap-2">
+                                    <input type="radio" class="btn-check" name="weather" id="w1" checked>
+                                    <label class="btn btn-outline-custom flex-grow-1 py-2" for="w1">
+                                        <i class="bi bi-check-circle me-2"></i>低
+                                    </label>
+
+                                    <input type="radio" class="btn-check" name="weather" id="w2">
+                                    <label class="btn btn-outline-custom flex-grow-1 py-2" for="w2">
+                                        <i class="bi bi-exclamation-circle me-2"></i>中
+                                    </label>
+
+                                    <input type="radio" class="btn-check" name="weather" id="w3">
+                                    <label class="btn btn-outline-custom flex-grow-1 py-2" for="w3">
+                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>高
+                                    </label>
+                                </div>
+                            </div>
+
                             <div class="mb-4">
-                                <label class="form-label">記録カテゴリ<span class="required-mark">*</span></label>
+                                <label class="form-label">ログ種別<span class="required-mark">*</span></label>
                                 <div class="category-options">
                                     <div class="category-option">
                                         <input type="radio" name="category" id="cat-checkup" value="checkup" required>
                                         <label for="cat-checkup" class="category-label">
-                                            <i class="bi bi-hospital" style="color: #3b82f6;"></i>
-                                            <span>健康診断</span>
+                                            <i class="bi bi-basket" style="color: #3b82f6;"></i>
+                                            <span>給餌</span>
                                         </label>
                                     </div>
                                     <div class="category-option">
                                         <input type="radio" name="category" id="cat-vaccine" value="vaccine">
                                         <label for="cat-vaccine" class="category-label">
-                                            <i class="bi bi-shield-check" style="color: #f59e0b;"></i>
-                                            <span>ワクチン</span>
+                                            <i class="bi bi-droplet-half" style="color: #f59e0b;"></i>
+                                            <span>水質</span>
                                         </label>
                                     </div>
                                     <div class="category-option">
                                         <input type="radio" name="category" id="cat-weight" value="weight">
                                         <label for="cat-weight" class="category-label">
-                                            <i class="bi bi-speedometer2" style="color: #10b981;"></i>
-                                            <span>体重測定</span>
+                                            <i class="bi bi-gear" style="color: #10b981;"></i>
+                                            <span>設備</span>
                                         </label>
                                     </div>
                                     <div class="category-option">
                                         <input type="radio" name="category" id="cat-medication" value="medication">
                                         <label for="cat-medication" class="category-label">
-                                            <i class="bi bi-capsule" style="color: #ec4899;"></i>
-                                            <span>投薬</span>
-                                        </label>
-                                    </div>
-                                    <div class="category-option">
-                                        <input type="radio" name="category" id="cat-daily" value="daily">
-                                        <label for="cat-daily" class="category-label">
-                                            <i class="bi bi-sun" style="color: #fb923c;"></i>
-                                            <span>日常記録</span>
-                                        </label>
-                                    </div>
-                                    <div class="category-option">
-                                        <input type="radio" name="category" id="cat-other" value="other">
-                                        <label for="cat-other" class="category-label">
-                                            <i class="bi bi-three-dots" style="color: #6b7280;"></i>
-                                            <span>その他</span>
+                                            <i class="bi bi-activity" style="color: #ec4899;"></i>
+                                            <span>生体</span>
                                         </label>
                                     </div>
                                 </div>
@@ -552,73 +525,23 @@
                             </h3>
 
                             <div class="mb-4">
-                                <label class="form-label">タイトル<span class="required-mark">*</span></label>
-                                <input type="text" class="form-control" placeholder="例：定期健康診断、朝の散歩" required>
+                                <label class="form-label">件名<span class="required-mark">*</span></label>
+                                <input type="text" class="form-control" placeholder="例: メイン水槽B区画における水温低下アラート" required>
                                 <div class="help-text">
                                     <i class="bi bi-lightbulb"></i> 簡潔でわかりやすいタイトルをつけましょう
                                 </div>
                             </div>
 
                             <div class="mb-4">
-                                <label class="form-label">詳細内容<span class="required-mark">*</span></label>
-                                <textarea class="form-control" placeholder="今日のペットの様子や気づいたことを記録してください..."
+                                <label class="form-label">詳細報告<span class="required-mark">*</span></label>
+                                <textarea class="form-control" placeholder="発生事象、観測された数値データ、および実施した一次対応について具体的かつ客観的に記述してください..."
                                     required></textarea>
-                                <div class="help-text">
-                                    <i class="bi bi-chat-quote"></i> 健康状態、行動、食事、気づいたことなどを詳しく記録しましょう
-                                </div>
                             </div>
 
-                            <div class="mb-4">
-                                <label class="form-label">ペットの気分</label>
-                                <div class="mood-selector">
-                                    <span class="mood-option" data-mood="very-happy" title="とても元気">😄</span>
-                                    <span class="mood-option" data-mood="happy" title="元気">😊</span>
-                                    <span class="mood-option active" data-mood="normal" title="普通">😐</span>
-                                    <span class="mood-option" data-mood="tired" title="疲れ気味">😔</span>
-                                    <span class="mood-option" data-mood="sick" title="体調不良">😷</span>
-                                </div>
-                                <div class="help-text text-center mt-2">
-                                    クリックしてペットの気分を選択
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 測定値 -->
-                        <div class="form-section">
-                            <h3 class="section-title">
-                                <i class="bi bi-graph-up-arrow"></i>
-                                測定値（任意）
-                            </h3>
-
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">体重</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="8.5" step="0.1">
-                                        <span class="input-group-text">kg</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">体温</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="38.5" step="0.1">
-                                        <span class="input-group-text">℃</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">水分摂取量</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="750">
-                                        <span class="input-group-text">ml</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">運動量（歩数）</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control" placeholder="8500">
-                                        <span class="input-group-text">歩</span>
-                                    </div>
-                                </div>
+                            <div class="mb-0">
+                                <label class="form-label">関連エラーコード</label>
+                                <input type="text" class="form-control"
+                                    placeholder="例: #Err-404, #Bio-Alert, #Maint-Req (カンマ区切りで入力)">
                             </div>
                         </div>
 
@@ -658,18 +581,6 @@
                                     <i class="bi bi-info-circle"></i> Enterキーでタグを追加できます
                                 </div>
                             </div>
-
-                            <div>
-                                <label class="form-label">おすすめタグ</label>
-                                <div class="suggested-tags">
-                                    <span class="suggested-tag" onclick="addTag('散歩')">#散歩</span>
-                                    <span class="suggested-tag" onclick="addTag('食事')">#食事</span>
-                                    <span class="suggested-tag" onclick="addTag('遊び')">#遊び</span>
-                                    <span class="suggested-tag" onclick="addTag('しつけ')">#しつけ</span>
-                                    <span class="suggested-tag" onclick="addTag('健康')">#健康</span>
-                                    <span class="suggested-tag" onclick="addTag('成長')">#成長</span>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- ボタン -->
@@ -691,59 +602,24 @@
             <div class="col-lg-4">
                 <div class="info-card">
                     <h5 class="info-card-title">
-                        <i class="bi bi-lightbulb-fill"></i> 記録のポイント
+                        <i class="bi bi-lightbulb-fill"></i>入力ガイドライン
                     </h5>
                     <ul>
-                        <li>毎日の健康状態を記録することで、変化に気づきやすくなります</li>
-                        <li>写真を添付すると、成長の記録が見返しやすくなります</li>
-                        <li>気になることは小さなことでもメモしておきましょう</li>
-                        <li>定期的な体重測定は健康管理に重要です</li>
+                        <li>数値データは単位まで正確に記録すること。</li>
+                        <li>生体異常時は、バイタル数値の変動を必ず記載すること。</li>
+                        <li>設備トラブルの場合、影響範囲（セクター）を明記すること。</li>
+                        <li>憶測と事実は明確に分けて記述すること。</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
                     <h5 class="info-card-title">
-                        <i class="bi bi-bar-chart-line-fill"></i> 今月の記録状況
+                        <i class="bi bi-shield-lock-fill"></i>エビデンス添付規定
                     </h5>
-                    <div class="mb-3">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>記録日数</span>
-                            <strong style="color: var(--primary-color);">18日 / 20日</strong>
-                        </div>
-                        <div class="progress" style="height: 10px; border-radius: 10px;">
-                            <div class="progress-bar"
-                                style="width: 90%; background: linear-gradient(135deg, aqua, blue);">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-3">
-                        <p class="mb-0" style="color: var(--brown-color);">
-                            <i class="bi bi-trophy-fill text-warning"></i>
-                            あと2日で目標達成！
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h5 class="info-card-title">
-                        <i class="bi bi-clock-history"></i> 最近の記録
-                    </h5>
-                    <div class="small">
-                        <div class="d-flex justify-content-between mb-2 pb-2"
-                            style="border-bottom: 1px solid rgba(0,0,0,0.1);">
-                            <span>体重測定</span>
-                            <span class="text-muted">11/18</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2 pb-2"
-                            style="border-bottom: 1px solid rgba(0,0,0,0.1);">
-                            <span>定期健診</span>
-                            <span class="text-muted">11/10</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>投薬</span>
-                            <span class="text-muted">11/05</span>
-                        </div>
-                    </div>
+                    <p class="text-muted small mb-0">
+                        異常報告には、現場写真またはセンサーログのスクリーンショット添付が義務付けられています。<br>
+                        全てのアップロードデータは暗号化され、中央サーバーにアーカイブされます。
+                    </p>
                 </div>
             </div>
         </div>
