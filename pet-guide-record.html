@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>記録_AQUARIUM GENESIS</title>
+    <link rel="icon" href="./img/AQUARIUM_GENESIS_favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <style>
@@ -251,10 +252,10 @@
             color: white;
             border-color: transparent;
         }
-        td{
+
+        td {
             min-width: 10rem;
         }
-
     </style>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -604,6 +605,35 @@
                             <strong>[Stock]</strong> 液体窒素の在庫低下 (要発注)
                         </li>
                     </ul>
+                </div>
+                <div class="progress-card mb-4">
+                    <h5 class="fw-bold"><i class="bi bi-exclamation-octagon-fill"></i>異常報告</h5>
+                    <p class="text-muted small mb-3">
+                        本個体に関する異常行動や、設備トラブルを発見した場合は直ちに通報してください。
+                    </p>
+                    <button class="btn btn-outline-danger w-100 rounded-pill fw-bold" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        緊急通報
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">緊急通報受理</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    緊急通報を受理しました。<br>マニュアルに従って行動してください。
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
